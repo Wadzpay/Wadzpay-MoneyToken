@@ -1,0 +1,76 @@
+package com.vacuumlabs.wadzpay.comply.models
+
+import java.math.BigDecimal
+
+data class ComplyAdvantageRequest(
+    var id: String?,
+    var source_format: String,
+    var data: ComplyAdvantageRequestData
+)
+
+data class ComplyAdvantageRequestData(
+
+    var tx_id: String,
+    var customer_name: String,
+    var customer_id: String,
+    var customer_risk_category: String,
+    var counterparty_id: String,
+    var counterparty_name: String,
+    var counterparty_country: String,
+    var counterparty_bank_country: String,
+    var tx_direction: String,
+    var tx_base_currency: String,
+    var tx_base_amount: BigDecimal?,
+    var tx_currency: String,
+    var tx_date_time: String,
+
+    var customer_type: String? = "",
+    var customer_account_balance: BigDecimal? = BigDecimal.ZERO,
+    var customer_account_currency: String? = "",
+    var customer_base_account_balance: String? = "",
+    var customer_account_number: String? = "",
+    var counterparty_institution_id: String? = "",
+    var tx_payment_channel: String? = "",
+    var tx_mcc_code: String? = "",
+    var tx_loan_funding_datetime: String? = "",
+    var tx_loan_settlement_datetime: String? = "",
+    var tx_loan_expected_repayment_date: String? = "",
+    var tx_loan_monthly_expected_installment_amount: BigDecimal? = BigDecimal.ZERO,
+    var customer_account_type: String? = "",
+    var customer_sort_code: String? = "",
+    var customer_date_of_birth: String? = "",
+    var customer_country: String? = "",
+    var customer_state: String? = "",
+    var customer_city: String? = "",
+    var customer_address: String? = "",
+    var customer_postcode: String? = "",
+    var customer_income: String? = "",
+    var customer_expected_amount: String? = "",
+    var customer_bank_branch_id: String? = "",
+    var customer_bank: String? = "",
+    var customer_loan_id: String? = "",
+    var customer_loan_amount: BigDecimal? = BigDecimal.ZERO,
+    var customer_loan_base_balance: BigDecimal? = BigDecimal.ZERO,
+    var customer_credit_limit: BigDecimal? = BigDecimal.ZERO,
+    var customer_expected_installment_amount: String? = "",
+    var counterparty_type: String? = "",
+    var counterparty_account_number: String? = "",
+    var counterparty_sort_code: String? = "",
+    var counterparty_date_of_birth: String? = "",
+    var counterparty_state: String? = "",
+    var counterparty_address: String? = "",
+    var counterparty_city: String? = "",
+    var counterparty_postcode: String? = "",
+    var counterparty_reference: String? = "",
+    var ll_counterparty_country: String? = "",
+    var ll_counterparty_bank_country: String? = "",
+    var ll_tx_currency: String? = "",
+    var tx_type: String? = "",
+    var tx_calendar_year: String? = "",
+    var tx_calendar_month: String? = "",
+    var tx_amount: BigDecimal? = BigDecimal.ZERO,
+    var tx_reference_text: String? = "",
+    var tx_product: String? = "",
+    var counterparty_institution_name: String? = ""
+
+)

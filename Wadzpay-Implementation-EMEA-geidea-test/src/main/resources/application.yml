@@ -1,0 +1,183 @@
+spring:
+  jackson:
+    deserialization:
+      use-big-decimal-for-floats: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: password
+  redis:
+    host: localhost
+    port: 6379
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      jdbc:
+        time_zone: UTC
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  liquibase.enabled: false
+  flyway:
+    enabled: true
+    baselineOnMigrate: true
+    schemas: public
+# start-this part is only for non-prod environment - vijayD
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "beans"
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+      probes:
+        enabled: true
+    env:
+      enabled: true
+    info:
+      enabled: true
+    loggers:
+      enabled: true
+    metrics:
+      enabled: true
+    logfile:
+      external_file: ./logs/spring-boot-logger.log
+      enabled: true
+
+  health:
+    readinessstate:
+      enabled: true
+    livenessstate:
+      enabled: true
+# end-this part is only for non-prod environment - vijayD
+server:
+  error:
+    include-message: always # remove this in production
+springdoc:
+  swagger-ui:
+    oauth:
+      clientId: *****************************
+      clientSecret: ************************************
+    path: /swagger-ui.html
+    persistAuthorization: true
+  oauth-flow:
+    authorizationUrl: https://****************.amazoncognito.com/oauth2/authorize
+    tokenUrl: https://*************************.amazoncognito.com/oauth2/token
+  show-login-endpoint: true
+twilio:
+  accountSid: *************************
+  authToken: ****************************
+  verifyServiceSid: **************************
+cryptocompare:
+  baseUrl: https://min-api.cryptocompare.com
+bitgo:
+  baseUrl: https://app.bitgo-test.com
+  token: *************************************
+  express:
+    baseUrl: http://0.0.0.0:3080
+  txWebhooks:
+    - ***************************
+seon:
+  enabled: false
+  uri: https://api.seon.io/SeonRestService/fraud-api/v2.0
+  apiKey: *****************************
+jumio:
+  apiToken: ************************************
+  secret: *****************************
+  url: https://core-sgp.jumio.com/api/v4/initiate/
+complyadvantage:
+  api_key: *************************************
+  url: https://*****************.complyadvantage.com/external/v2/transactions
+vepay:
+  base_url: https://secure.vepay.co.in
+  merchant_ID: ***************
+  merchant_key: *****************
+  api_key: Default *****************
+ssl:
+  trustStorePassword: changeit
+  keystoreType: JKS
+webhooks-io:
+  baseUrl: https://api.webhooks.io/v1
+  apiToken: ******************************
+  accountId: ********************
+  bucketId: *****************************
+api:
+  privateKey: **************************************
+appconfig:
+  production: false
+  environment: dev
+  gateways: Moonpay,Xanpool,Wyre,Mercuryo,Coinify,Indacoin
+  onRampApiKey: pk_test_vDmnm1pzLClLVi5R4rg4PnA4Rjors3ubispQfNLIXcg0
+  gap600RunMode : true
+  stubEnable : false
+  wallets:
+    btcInward: ***********************************
+    btcOutward: ********************************
+    ethInward: xxx
+    ethOutward: xxx
+    usdtInward: xxx
+    usdtOutward: xxx
+    wtkInward: xxx
+    wtkOutward: xxx
+    usdcInward: xxx
+    usdcOutward: xxx
+    algoInward: xxx
+    algoOutward: xxx
+    usdcaInward: xxx
+    usdcaOutward: xxx
+    sartInward: xxx
+    sartOutward: xxx
+  walletIds:
+    btc: ******************************
+    eth: not_existing
+    usdt: not_existing
+    wtk: not_existing
+    usdc: not_existing
+    algo: not_existing
+    usdca: not_existing
+    sart: pending_from_p_blockchain
+  walletPassphrases:
+    btc: c@2ijTd95x5dV@a
+    eth: xxx
+    usdt: xxx
+    wtk: xxx
+    usdc: xxx
+    algo: xxx
+    usdca: xxx
+    sart: xxx
+  feeRate: 0.005
+  s3:
+    appBucket: ************************************
+onramper:
+  secret: secreto # ask for our private key
+  hashingAlgorithm: HmacSHA256
+retry-policy:
+  retryCount: 5
+  retryInterval: 2000
+aws:
+  userPoolId: "eu-central-1_YHGC0AdSw"
+  region: "eu-central-1"
+  accessKeyId: ************************************
+  secretAccessKey: mbFbum+************************************/Rq
+  awsUserPoolsWebClientId: "************************************"
+gap600:
+  apikey: "36e50cb5c3f6eabe4d76e1a1************************************74d283fd9bacfb54"
+  agentid: "Primary"
+  url: https://api.gap600.com
+scheduler:
+  initialDelay: 1000
+  fixedRate: 60000
+algocustomtoken:
+  baseUrl: https://golang.dev.wadzpay.com
+  token: "************************************..-"
+  sartokenid : "sarttokenid"
+  bcIndexerUrl: "http://************************************:8980"
+  algoApiVersion: "v2"
+  creatorAddress: "************************************"
+  useJAVAAlgoSDK : false
+encryptionsaltkey:
+  version1: "************************************="
+  version2: "************************************="
+  version3: "************************************="

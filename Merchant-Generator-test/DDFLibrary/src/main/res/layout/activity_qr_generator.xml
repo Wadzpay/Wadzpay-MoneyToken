@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context="com.wadzpay.ddflibrary.activities.QRGeneratorActivityGeidea">
+
+        <RelativeLayout
+            android:padding="10dp"
+            android:id="@+id/rl_top_qr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_back_common"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
+                android:text="@string/screens_title"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_view_qr_tablet"
+                android:textStyle="bold" />
+
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/tv_timer_qr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/bg_circle_timer"
+                android:padding="10dp"
+                android:text="00"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_qr_format_req_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_currency_req_pay"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_corners_white"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:id="@+id/tv_qr_format_req_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="QR Format 1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:id="@+id/iv_qr_format_req_pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/ic_btc_options" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_qr1_qr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/btn_corners_app_color"
+                    android:text="QR1"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_view_qr_tablet"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_qr2_qr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/btn_corners_app_color"
+                    android:text="QR2"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_view_qr_tablet"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_qr3_qr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/btn_corners_app_color"
+                    android:text="QR3"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_view_qr_tablet"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_qr4_qr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/btn_corners_app_color"
+                    android:text="QR4"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_view_qr_tablet"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_qr5_qr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/btn_corners_app_color"
+                    android:text="QR5"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_view_qr_tablet"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_qr6_qr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/btn_corners_app_color"
+                    android:text="QR6"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_view_qr_tablet"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_qr_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_corners_app_color"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_qr_formats_req_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/scan_qr_code_to_pay"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_view_qr_tablet"
+            android:textStyle="bold" />
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/payment_time_text"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_view_qr_tablet"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/et_input_qr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_text"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:text="@string/wadzpay"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_corners_gray"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="6dp"
+            android:paddingTop="10dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_address_qr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_clipboard"
+                android:drawablePadding="2dp"
+                android:text="id?value=0.4,currency=btc"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_view_thank_you_tablet" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lyt_total_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/total_fiat"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_view_qr_tablet" />
+
+            <TextView
+                android:id="@+id/tv_fiat_amount_qr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="0.00004053 BTC"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_view_qr_tablet"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/total_amount"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_view_qr_tablet" />
+
+            <TextView
+                android:id="@+id/tv_crypto_amount_qr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:drawablePadding="5dp"
+                android:text="0.00004053 BTC"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_view_qr_tablet"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_generate_qr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_corners_app_color"
+                android:text="@string/regenerate_qr_code"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <Button
+                android:visibility="gone"
+                android:id="@+id/btn_check_qr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top_margin_tablet"
+                android:background="@drawable/btn_corners_gray"
+                android:padding="@dimen/button_padding_tablet"
+                android:text="@string/transaction_status"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_view_qr_tablet"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_cancel_qr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/top_margin_tablet"
+                android:background="@drawable/btn_corners_gray"
+                android:padding="@dimen/button_padding_tablet"
+                android:text="@string/cancel"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_view_qr_tablet"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,164 @@
+.searchIcon {
+  position: absolute;
+  z-index: 100;
+  top: 7px;
+  right: 10px;
+  cursor: pointer;
+}
+.datepicker-custom {
+  span.ant-picker-suffix {
+    color: #323030 !important;
+    font-size: 15px;
+  }
+}
+.walletsSummaryCard .third {
+  width: 100%;
+}
+.ant-form-item .ant-form-item-label > label::after {
+  content: "";
+}
+input::placeholder {
+  color: #808080 !important;
+}
+.greater-less-than {
+  margin-top: -5px !important;
+}
+.equal-to {
+  position: absolute;
+  margin-top: 20px;
+}
+.rc-virtual-list-holder-inner {
+  .greater-than,
+  .less-than {
+    margin-top: -3px;
+  }
+  .greater-less-than {
+    margin-top: -5px !important;
+  }
+  .equal-to {
+    margin-top: 16px;
+  }
+}
+.balanceFilterFrom {
+  position: absolute;
+  background-color: #ffffff;
+  width: 18%;
+  border: 1px solid #c4c4c4;
+  padding: 3px;
+  margin-top: 85px;
+  z-index: 100;
+  height: 40px;
+  border-radius: 5px;
+  margin-left: 955px;
+
+  .button {
+    color: #ffffff;
+    border-radius: 5px;
+    border-style: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .maxAmount {
+    border-radius: 0px 5px 5px 0px !important;
+  }
+}
+.balanceFilterFromSmall {
+  width: 12%;
+  margin-left: 1037px;
+}
+
+.ant-table-thead > tr {
+  background: #e9f6fc;
+
+  .ant-table-cell {
+    margin-left: 12px !important;
+    position: relative !important;
+  }
+  th:nth-child(6) {
+    float: right;
+    right: 10px;
+  }
+}
+
+.walletList {
+  .ant-table-tbody > tr {
+    background: #fff !important;
+    td:nth-child(6) {
+      float: right;
+      right: 10px;
+      border: none !important;
+    }
+  }
+}
+
+.languageOnly {
+  .ant-table-tbody > tr {
+    td:nth-child(6) {
+      float: right;
+      right: 135px;
+    }
+  }
+}
+
+.ant-table-cell {
+  background: none !important;
+}
+.ant-table-cell-row-hover {
+  background: none !important;
+}
+.WalletFilters {
+  .tabs:hover {
+    color: #26a6e0 !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .WalletFilters {
+    .col-xl-1.col-lg-6 {
+      width: 30%;
+    }
+    .ant-form-item-label {
+      padding: 0 0 0 0;
+    }
+    .searchByselection {
+      margin-bottom: -20px !important;
+    }
+    .activationDateFrom {
+      width: 50%;
+      margin-top: 0px !important;
+    }
+    .activationDateTo {
+      width: 50%;
+      margin-top: 0px !important;
+    }
+    .balanceAmount {
+      width: 50%;
+      margin-top: -20px !important;
+    }
+  }
+}
+@media only screen and (min-width: 1402px) {
+  .balanceAmount {
+    width: 16%;
+  }
+}
+@media only screen and (min-width: 1459px) {
+  .balanceAmount {
+    width: 15%;
+  }
+}
+@media only screen and (min-width: 1553px) {
+  .balanceAmount {
+    width: 14%;
+  }
+}
+@media only screen and (min-width: 1662px) {
+  .balanceAmount {
+    width: 13%;
+  }
+}
+@media only screen and (min-width: 1787px) {
+  .balanceAmount {
+    width: 12%;
+  }
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/sdk_common_top_bottom_20"
+    android:background="@android:color/white"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:id="@+id/rl_d_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_d_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/sdk_common_padding"
+            android:text="title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_d_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_d_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/sdk_common_top_bottom_20"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_d_msg"
+                style="@style/SmallFontStyle"
+                android:padding="@dimen/sdk_common_padding"
+                android:text="@string/error_message_validate"
+                android:textColor="@color/border_gray" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_d_msg"
+        android:layout_marginTop="@dimen/sdk_common_top_bottom_30">
+
+        <TextView
+            android:id="@+id/tv_d_ok"
+            style="@style/ButtonThemeSmallStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:textColor="@color/ddf_lib_color"
+            android:text="@string/okay"
+            android:layout_marginRight="@dimen/sdk_common_top_bottom_20"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

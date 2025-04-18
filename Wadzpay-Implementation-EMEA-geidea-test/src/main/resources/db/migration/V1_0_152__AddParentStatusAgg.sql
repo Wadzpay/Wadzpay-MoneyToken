@@ -1,0 +1,14 @@
+ALTER TABLE IF EXISTS public.institution add  column if not exists is_parent_de_activated  BOOLEAN DEFAULT FALSE;
+ALTER TABLE IF EXISTS public.institution add  column if not exists is_parent_closed  BOOLEAN DEFAULT FALSE;
+ALTER TABLE IF EXISTS public.merchant_group add  column if not exists is_parent_de_activated  BOOLEAN DEFAULT FALSE;
+ALTER TABLE IF EXISTS public.merchant_group add  column if not exists is_parent_closed  BOOLEAN DEFAULT FALSE;
+ALTER TABLE IF EXISTS public.merchant_acquirer add  column if not exists is_parent_de_activated  BOOLEAN DEFAULT FALSE;
+ALTER TABLE IF EXISTS public.merchant_acquirer add  column if not exists is_parent_closed  BOOLEAN DEFAULT FALSE;
+ALTER TABLE IF EXISTS public.sub_merchant_acquirer add  column if not exists is_parent_de_activated  BOOLEAN DEFAULT FALSE;
+ALTER TABLE IF EXISTS public.sub_merchant_acquirer add  column if not exists is_parent_closed  BOOLEAN DEFAULT FALSE;
+ALTER TABLE IF EXISTS public.outlet add  column if not exists is_parent_de_activated  BOOLEAN DEFAULT FALSE;
+ALTER TABLE IF EXISTS public.outlet add  column if not exists is_parent_closed  BOOLEAN DEFAULT FALSE;
+ALTER TABLE IF EXISTS public.pos add  column if not exists is_parent_de_activated BOOLEAN DEFAULT FALSE;
+ALTER TABLE IF EXISTS public.pos add  column if not exists is_parent_closed BOOLEAN DEFAULT FALSE;
+ALTER TABLE IF EXISTS public.entity_others add  column if not exists entity_others_expiry_date character varying(25);
+ALTER TABLE IF EXISTS public.pos add  column if not exists is_parent_blocked BOOLEAN DEFAULT FALSE;

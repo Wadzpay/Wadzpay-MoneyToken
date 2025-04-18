@@ -1,0 +1,43 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="sdk_build_type_top_margin">40dp</dimen>
+    <dimen name="sdk_db_fab_button_margin">20dp</dimen>
+    <dimen name="sdk_db_card_margin">10dp</dimen>
+    <dimen name="sdk_common_padding">10dp</dimen>
+    <dimen name="sdk_common_small_text">10sp</dimen>
+    <dimen name="sdk_db_card_item_margin">5dp</dimen>
+    <dimen name="sdk_dialog_button_width">200dp</dimen>
+    <dimen name="sdk_common_top_bottom_100">100dp</dimen>
+    <dimen name="sdk_common_top_bottom_70">70dp</dimen>
+    <dimen name="sdk_common_top_bottom_50">50dp</dimen>
+    <dimen name="sdk_common_top_bottom_40">40dp</dimen>
+    <dimen name="sdk_common_top_bottom_30">30dp</dimen>
+    <dimen name="sdk_common_top_bottom_20">20dp</dimen>
+    <dimen name="sdk_common_top_bottom_10">10dp</dimen>
+    <dimen name="sdk_common_top_bottom_5">5dp</dimen>
+    <dimen name="sdk_common_top_bottom_4">4dp</dimen>
+    <dimen name="sdk_common_top_bottom_3">3dp</dimen>
+    <dimen name="sdk_common_top_bottom_2">2dp</dimen>
+    <dimen name="sdk_common_top_bottom_1">1dp</dimen>
+    <dimen name="sdk_common_top_bottom_0">0dp</dimen>
+    <dimen name="sdk_progress_bar_height_width">150dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">130dp</dimen>
+
+    <dimen name="text_view_tablet">18sp</dimen>
+    <dimen name="top_margin_tablet">10dp</dimen>
+    <dimen name="hint_tablet">10dp</dimen>
+    <dimen name="button_padding_tablet">2dp</dimen>
+    <dimen name="text_view_qr_tablet">16sp</dimen>
+    <dimen name="text_view_qr_merchant">30sp</dimen>
+    <dimen name="welcome_iv_tablet">300dp</dimen>
+    <dimen name="forgot_password_margin_tablet">100dp</dimen>
+    <dimen name="text_view_email_tablet">14sp</dimen>
+    <dimen name="text_view_thank_you_tablet">14sp</dimen>
+    <dimen name="welcome_width">375dp</dimen>
+    <dimen name="welcome_height">812dp</dimen>
+
+</resources>

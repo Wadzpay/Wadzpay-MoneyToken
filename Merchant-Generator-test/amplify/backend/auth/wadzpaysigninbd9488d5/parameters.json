@@ -1,0 +1,19 @@
+{
+  "authSelections": "userPoolOnly",
+  "resourceName": "wadzpaysigninbd9488d5",
+  "serviceType": "imported",
+  "region": "ap-southeast-1",
+  "usernameAttributes": [
+    "email"
+  ],
+  "requiredAttributes": [],
+  "passwordPolicyMinLength": 8,
+  "passwordPolicyCharacters": [
+    "Requires Lowercase",
+    "Requires Uppercase",
+    "Requires Numbers",
+    "Requires Symbols"
+  ],
+  "mfaConfiguration": "OFF",
+  "mfaTypes": []
+}

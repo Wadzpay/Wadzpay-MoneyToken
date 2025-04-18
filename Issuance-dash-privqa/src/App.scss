@@ -1,0 +1,1587 @@
+$body-background-color: #ffffff;
+$font-color-main: #26a6e0;
+$font-color-yellow: #f38300;
+$font-color-green: #00ad6e;
+$font-color-grey: #808080;
+$background-color-main: #26a6e0;
+$background-color-yellow: #f38300;
+$background-color-green: #00ad6e;
+$background-color-grey: #808080;
+$background-color-grey-1: #919eab;
+$background-color-grey-2: #efefef;
+$card-background-color: #ffffff;
+$card-shadow-color: 0px 16px 24px 0px rgba(0, 0, 0, 0.05);
+$font-family-global: "Rubik";
+
+.txt-right {
+  text-align: right;
+}
+.output-wrapper {
+  box-sizing: border-box;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(230, 230, 230);
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin-top: 30px;
+  font-size: 1.2em;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  border: 1px solid rgba(180, 180, 180, 0.5);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: $body-background-color;
+}
+
+.wdz-font-color {
+  color: $font-color-main;
+}
+
+.wdz-font-color-yellow {
+  color: $font-color-yellow;
+}
+
+.wdz-font-color-green {
+  color: $font-color-green;
+}
+
+.wdz-font-color-grey {
+  color: $font-color-grey;
+}
+
+.wdz-main-bg-color {
+  background: $background-color-main;
+}
+
+.wdz-yellow-bg-color {
+  background: $background-color-yellow;
+}
+
+.wdz-green-bg-color {
+  background: $background-color-green;
+}
+
+.wdz-grey-bg-color {
+  background: $background-color-grey;
+}
+
+.btn-items-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div,
+h5,
+li {
+  font-family: $font-family-global;
+}
+
+.signIn {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  .loginBG {
+    width: 100%;
+    background-color: #f4ede5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 1px);
+    zoom: normal;
+  }
+  .userAuth {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .userAuthForm {
+    min-width: 300px;
+    padding: 4%;
+    text-align: center;
+    background: #ffffff;
+    backdrop-filter: blur(4px);
+    border-radius: 11px;
+  }
+  .userCopyright {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .userAuthWTKLogo {
+    img {
+      // width: 50%;
+      // height: 50px;
+    }
+  }
+  .loginBorderLine {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    border: 1px solid #e0e0e0;
+  }
+  .userAuthLoginText {
+    h5 {
+      font-size: 1em;
+      font-family: $font-family-global;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 40px;
+      // letter-spacing: 0.8px;
+      color: #000000;
+      margin: 0;
+    }
+    p {
+      font-size: 0.8em;
+      font-family: $font-family-global;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 5px;
+      letter-spacing: 0.2px;
+    }
+  }
+  .userInput {
+    background: #ffffff;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    font-family: $font-family-global;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.4375px;
+    // color: rgba(39, 39, 39, 0.4);
+    width: 100%;
+    height: 38px;
+    padding: 4%;
+  }
+  .signInBtn {
+    background-color: #ffc235;
+    border: 1px solid #ffc235 !important;
+    width: 100%;
+    color: #ffffff;
+    outline: 0;
+    border: 0;
+    font-family: $font-family-global;
+    font-style: normal;
+    font-weight: 500;
+    // font-size: 14px;
+    // line-height: 19px;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    // padding: 4%;
+  }
+  .signInBtn:hover {
+    background-color: #ffc235 !important;
+  }
+  .signInBtnGrey {
+    background-color: $background-color-grey;
+    width: 100%;
+    color: #ffffff;
+    outline: 0;
+    border: 0;
+    font-family: $font-family-global;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    // line-height: 19px;
+    letter-spacing: 0.5px;
+    // padding: 4%;
+  }
+  .signInBtnGrey:hover {
+    background-color: #5e5e5e !important;
+  }
+  .userAuthTerms {
+    P {
+      margin-top: 50px;
+      margin-bottom: 0;
+    }
+    p > a {
+      font-family: $font-family-global;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: #3d3d3d;
+      text-decoration: none;
+    }
+  }
+  .forgotPassword {
+    text-decoration: none;
+    cursor: pointer;
+    color: #25aae1;
+    text-decoration-line: underline;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .copyright {
+    font-size: 13px;
+    background: #fff;
+    width: 44%;
+    border-radius: 11px;
+    padding: 10px;
+    margin-top: 25px;
+    text-align: center;
+  }
+}
+
+.qrCodeContainer {
+  background: white;
+  text-align: center;
+  border: 15px solid #ffc234;
+  border-radius: 15px;
+  width: 49%;
+  margin: 0 auto;
+}
+
+.userCopyright {
+  font-family: $font-family-global;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+input::placeholder {
+  color: #9c9c9c !important;
+  font-size: 14px !important;
+}
+
+.userInput:focus {
+  outline: none;
+}
+
+.signInBtn:hover {
+  cursor: pointer;
+}
+
+.signInBtn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.header {
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  bottom: 0;
+  height: 72px;
+  overflow: auto;
+  width: 100%;
+  left: 0;
+  box-shadow: 0 0 2px #ccc;
+}
+
+.mainLogo {
+  position: absolute;
+  height: 72px;
+  background: #ffc235;
+  width: 72px !important;
+}
+
+.wdzp-logo {
+  position: absolute;
+  left: 12px;
+  top: 15px;
+}
+
+.header-row {
+  font-size: calc(10px + 1vmin);
+  color: white;
+  height: 50px;
+}
+
+.logo-container {
+  margin-top: 10px;
+  // min-width: 200px;
+}
+
+.PhoneInputInput {
+  border: 0;
+}
+.navigation-container {
+  background: #ffffff;
+  font-family: $font-family-global;
+  font-style: normal;
+  box-shadow: 0 0 2px #ccc;
+  clip-path: inset(0px -15px 0px 0px);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  overflow: auto;
+}
+
+.main-container {
+  // margin-left: 16.1%;
+  background: $body-background-color;
+  // padding: 2%;
+  //height: 160vh;
+  // height: calc(100% - 5px);
+}
+
+.container-body {
+  margin-top: 70px;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+// custom scrollbar
+::-webkit-scrollbar-thumb {
+  background: #939598 !important;
+}
+::-webkit-scrollbar {
+  width: 7px !important;
+}
+.table-responsive::-webkit-scrollbar {
+  height: 5px;
+}
+.table-responsive::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.transaction-count {
+  background: #f6f7fa !important;
+  td:nth-child(1) {
+    text-align: left !important;
+  }
+}
+
+.transaction-count td:nth-child(5),
+.transaction-count td:nth-child(7) {
+  text-align: center;
+}
+
+.search-crypto-input input {
+  border: 0;
+  width: 100%;
+  padding-left: 3px;
+  padding-top: 4px;
+  border-radius: 7px;
+  border: 1px solid #dee2eb;
+  height: 37px;
+}
+
+.search-crypto-input input:focus {
+  outline: none;
+}
+
+/* enable absolute positioning */
+.search-addon {
+  position: relative;
+  margin-left: 1px;
+  display: flex;
+  align-items: center;
+}
+
+/* style icon */
+.search-addon .search-icon {
+  position: absolute;
+  margin: 7px;
+  pointer-events: none;
+}
+
+/* align icon */
+.right-addon .search-icon {
+  right: 0px;
+  margin-right: 6px;
+}
+
+/* add padding  */
+.search-crypto-input svg {
+  padding-right: 30px;
+}
+
+.custom-Datepicker-Periods {
+  display: flex;
+  margin: 8px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  a {
+    background: $background-color-grey-2 !important;
+    color: black !important;
+  }
+}
+
+.custom-Datepicker-Periods a {
+  margin: 4px;
+}
+
+.transaction-filter-dropdown {
+  border: 1px solid #dee2eb;
+  border-radius: 7px;
+}
+
+.transaction-filter-dropdown:hover {
+  background: $background-color-grey-2;
+  color: black;
+}
+
+.sales-transactions-table {
+  thead {
+    background: #f6f7fa;
+    border-radius: 5px;
+    tr {
+      th {
+        color: #2e3033;
+        font-family: $font-family-global;
+        font-style: normal;
+        font-weight: 600;
+      }
+      // td {
+      //   text-align: center;
+      // }
+    }
+  }
+
+  tbody {
+    border: 0 !important;
+    tr {
+      border-bottom: 1px solid #ececec !important;
+    }
+  }
+}
+
+.transactions-table {
+  thead {
+    background: #f6f7fa;
+    border-radius: 5px;
+    tr {
+      th {
+        color: #2e3033;
+        font-family: $font-family-global;
+        font-style: normal;
+        font-weight: 600;
+      }
+      // td {
+      //   text-align: center;
+      // }
+    }
+  }
+
+  tbody {
+    border: 0 !important;
+    tr {
+      border-bottom: 1px solid #ececec !important;
+    }
+    td:nth-child(3),
+    td:nth-child(4) {
+      text-align: right;
+    }
+  }
+}
+
+.setings-tabs {
+  // border-bottom: 0 !important;
+  padding-bottom: 10px;
+  li {
+    margin: 0 20px 0 0;
+    :hover {
+      border-radius: 19px !important;
+    }
+    button {
+      font-family: $font-family-global;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: #979899;
+      font-weight: 500;
+    }
+    button[aria-selected="true"] {
+      color: white !important;
+      background: $background-color-main !important;
+      border-radius: 19px !important;
+    }
+  }
+}
+
+.trxbalances {
+  display: flex;
+  align-items: center;
+}
+
+.trxbalancesData {
+  // text-align: left;
+  p {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+.fiatAssetFontSize {
+  font-size: 0.9em;
+}
+
+.loginPassword {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  font-family: $font-family-global;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.4375px;
+  // color: rgba(39, 39, 39, 0.4);
+  width: 100%;
+  height: 40px;
+  input:nth-child(1) {
+    border: 0 !important;
+  }
+  div {
+    border: 0;
+    cursor: pointer;
+    padding-right: 2%;
+  }
+}
+
+.passwordShowIcon {
+  display: flex;
+  align-items: center;
+  width: 16%;
+  right: 0;
+  position: absolute;
+  margin-top: -28px;
+}
+
+.signinForm-error {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: #dc3545;
+}
+
+.customFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.updatePasswordOTPForm {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  .userAuth {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .userAuthForm {
+    padding: 4%;
+    text-align: center;
+    background: #fff9f2;
+    backdrop-filter: blur(4px);
+    border-radius: 15px;
+  }
+  .userCopyright {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .userAuthWTKLogo {
+    img {
+      width: 40%;
+      height: 50px;
+    }
+  }
+  .userAuthLoginText {
+    h5 {
+      font-size: 1em;
+      font-family: $font-family-global;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 40px;
+      letter-spacing: 0.8px;
+      color: #000000;
+      margin: 0;
+    }
+    p {
+      font-size: 0.8em;
+      font-family: $font-family-global;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 5px;
+      letter-spacing: 0.2px;
+    }
+  }
+  .userInput {
+    background: #ffffff;
+    border: 1px solid #cfccd1;
+    border-radius: 5px;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.4375px;
+    width: 100%;
+    height: 38px;
+    padding: 4%;
+  }
+  .signInBtn {
+    background-color: #1e4b83;
+    width: 100%;
+    color: #ffffff;
+    outline: 0;
+    border: 0;
+    font-family: $font-family-global;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+    padding: 4%;
+  }
+  .signInBtnGrey {
+    background-color: $background-color-grey;
+    width: 100%;
+    color: #ffffff;
+    outline: 0;
+    border: 0;
+    font-family: $font-family-global;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+    padding: 4%;
+  }
+  .resendOTP {
+    background-color: $background-color-main;
+    width: 100%;
+    color: #ffffff;
+    outline: 0;
+    border: 0;
+    font-family: $font-family-global;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+    padding: 2% !important;
+  }
+  .userAuthTerms {
+    P {
+      margin-top: 50px;
+      margin-bottom: 0;
+    }
+    p > a {
+      font-family: $font-family-global;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: #3d3d3d;
+      text-decoration: none;
+    }
+  }
+  .forgotPassword {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.passwordShowIcon {
+  position: absolute;
+  margin-top: 10px;
+  display: inline-flex;
+  right: 34px;
+  width: 15px;
+}
+
+.refundPopup {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  background-color: white;
+  height: 800px;
+  zoom: 90%;
+  h3 {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .wdz-card {
+    padding-top: 5px;
+    width: 100%;
+  }
+}
+
+.refundbtn {
+  background-color: lightgrey;
+}
+
+.refundbtnOpacity {
+  opacity: 0.4 !important;
+}
+
+.mobileNumberInputs {
+  display: flex;
+  select {
+    width: 20%;
+    margin-right: 2%;
+  }
+  input {
+    width: 78%;
+  }
+}
+
+.signatureInput {
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 2px solid grey !important;
+  border-radius: 0 !important;
+  outline: 0;
+}
+
+.dashBoardBg {
+  height: "700px";
+  background: "#f4ede5";
+}
+
+.refundBg {
+  background: white;
+}
+
+.tooltip {
+  position: relative;
+}
+.tooltip::before {
+  background-color: rgb(12, 12, 12);
+  border: 1px solid #888;
+  border-radius: 2px;
+  color: rgb(255, 253, 253);
+  content: attr(data-title);
+  display: none;
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 30px;
+  right: 5px;
+  z-index: 1;
+}
+.tooltip:hover::before {
+  display: block;
+}
+
+.alert-danger {
+  color: #cd313f;
+  background-color: #fff2f0;
+  border-color: #ffccc7;
+  padding: 8px 7px 8px 7px;
+  font-size: 13px;
+}
+
+.ant-btn-loading-icon {
+  display: inline-flex !important;
+  font-weight: 600;
+}
+
+.button:hover {
+  background: rgb(249 182 27) !important;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 240px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  .signIn {
+    .userAuth {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  #navigation-container {
+    display: none;
+  }
+  .top-nav-desktop {
+    display: none;
+  }
+  #navigation-container-mobile {
+    margin-top: 50px;
+  }
+  .top-nav-mobile,
+  .mobile-menu {
+    display: block !important;
+  }
+  .wdzp-logo {
+    left: 80px;
+  }
+  .mainLogo {
+    left: 68px !important;
+  }
+  .ant-menu-light.ant-menu-root.ant-menu-inline {
+    border-inline-end: none !important;
+  }
+  .ant-menu {
+    .ant-menu-title-content {
+      color: #000 !important;
+    }
+  }
+  .configurations .WalletFilters {
+    height: auto !important;
+    .mt-3 {
+      margin-top: 0 !important;
+    }
+  }
+  .ant-table-column-title div {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  .signIn {
+    .userAuth {
+      width: 100%;
+    }
+  }
+}
+@media (min-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+}
+@media (min-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+}
+@media (min-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .signIn {
+    .userAuth {
+      width: 50%;
+    }
+  }
+}
+@media (min-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */
+  .signIn {
+    .userAuth {
+      width: 50%;
+    }
+  }
+}
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
+  .signIn {
+    .userAuth {
+      width: 50%;
+    }
+  }
+}
+
+.header-name {
+  font-size: 20px;
+}
+
+.buttonToLink {
+  background: none;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+}
+
+.buttonToLink:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+.textareaTnc {
+  -moz-appearance: textfield-multiline;
+  -webkit-appearance: textarea;
+  border: 1px solid gray;
+  height: 360px;
+  overflow: auto;
+  padding: 2px;
+  width: 400px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.atm {
+  text-align: center;
+  text-decoration-line: underline;
+  text-underline-offset: 4px;
+}
+
+.inputbox-wrap {
+  display: flex;
+
+  button {
+    padding-right: 10px;
+    background-color: #fff;
+  }
+}
+
+.search-clear {
+  position: absolute;
+  font-weight: 600;
+  border: none;
+  background-color: transparent;
+  line-height: 28px;
+  left: calc(100% - 20px);
+  z-index: 99999;
+  font-size: 15px;
+  color: #0d6efd;
+}
+
+.custom-header {
+  border: hidden;
+  background: #fff;
+}
+
+.customTable {
+  table thead,
+  tbody,
+  tfoot,
+  tr {
+    font-size: 13px;
+    border-style: hidden !important;
+    line-height: 29px;
+  }
+}
+
+.boxShadow {
+  box-shadow: 0 0 2px #ccc;
+}
+
+.col-sm-auto.bg-light.sticky-top {
+  box-shadow: 0 0 1px #919191;
+  margin-top: 72px;
+  z-index: 101;
+  border-top: 1px solid #fff;
+}
+
+.walletsSummaryCard {
+  background: #f6f6f6;
+  border: none;
+  border-radius: 10px;
+  min-height: 105px;
+  .first {
+    color: #717171;
+    font-size: 13px;
+  }
+  .third {
+    color: #717171;
+    font-size: 12px;
+  }
+}
+
+.loginBorderLine {
+  width: 100%;
+  left: 0px;
+  border: 1px solid #c9c1c1;
+}
+.dasboardBorderLine {
+  width: 110% !important;
+  margin-left: -5% !important;
+  border: 1px solid #c9c1c1 !important;
+  margin-bottom: 20px !important;
+}
+
+.progress {
+  border-radius: 0px 10px 10px 0px;
+  height: 10px;
+}
+
+// .walletUser {
+//   float: right;
+//   font-weight: 100;
+//   font-size: 16px;
+//   color: #483e52;
+//   margin-bottom: 0;
+// }
+
+.walletUser {
+  font-weight: 100;
+  font-size: 16px;
+  color: #483e52;
+  margin-bottom: 0;
+  position: absolute;
+  right: 0;
+}
+
+.walletUserType {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  color: #716e75;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+input::placeholder {
+  font-size: 14px;
+}
+
+.tableZIndex {
+  z-index: 101;
+}
+
+.tableCss {
+  table thead,
+  tbody,
+  tfoot,
+  tr {
+    border-style: hidden !important;
+    font-size: 14px;
+    border-radius: 2px !important;
+    th {
+      color: #1e1e1e;
+      font-weight: 600;
+
+      border: none !important;
+    }
+    td {
+      padding-top: 12px !important;
+      border: none !important;
+    }
+  }
+  tr:focus {
+    background: #ffffff !important;
+  }
+}
+
+.ant-select-item-option-active {
+  background: #26a6e0 !important;
+  color: #ffffff !important;
+}
+
+td.ant-table-cell {
+  border: none !important;
+}
+
+// .table-common {
+//   td.ant-table-cell {
+//     border: 1px solid !important;
+//   }
+// }
+
+.react-datepicker-popper {
+  z-index: 102 !important;
+}
+
+.table-custom {
+  th.ant-table-cell {
+    padding: 8px !important;
+  }
+}
+
+.pagination-custom {
+  margin-top: 10px;
+  li.ant-pagination-item-active {
+    border: none !important;
+    color: #26a6e0;
+  }
+}
+
+.less-screen-size-600 {
+  display: none;
+}
+.active-nav {
+  position: absolute;
+  display: inline-block;
+  margin-top: 12px;
+  left: -12px;
+}
+.active-tab {
+  position: absolute;
+  margin-top: 10px;
+  background: #26a6e0;
+  width: 100px;
+  height: 5px;
+}
+
+div#main-container {
+  width: 103%;
+}
+.custom-password-icon {
+  position: absolute;
+  right: 5px;
+  margin-top: 6px;
+}
+
+.mbsb-logo-sm {
+  max-height: 50px;
+}
+
+.language {
+  .makeDefaultLanguage {
+    color: #131313 !important;
+    border: 1px solid #131313;
+  }
+
+  .makeDefaultLanguage:hover {
+    background: #ffc235 !important;
+    border: 1px solid #ffc235 !important;
+  }
+
+  .ant-checkbox-wrapper-disabled {
+    span.ant-checkbox-inner {
+      background: #7bd0f6;
+      border: 1px solid #7bd0f6;
+    }
+    .ant-checkbox-inner:after {
+      border-color: #fff !important;
+    }
+  }
+  .first-row {
+    background: #fff9eb !important;
+  }
+  .default-row {
+    background: #fafafa !important;
+  }
+  .default-row:hover {
+    background: #f6f6f6 !important;
+  }
+
+  td {
+    border-radius: unset !important;
+  }
+
+  tr:hover .makeDefaultLanguage {
+    display: flex;
+  }
+
+  .default-row::after,
+  .first-row::after {
+    content: "";
+    display: block;
+    border-bottom: 8px solid #fff;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+
+  .default-row,
+  .first-row {
+    position: relative;
+    border-radius: 5px !important;
+  }
+
+  .first-column-margin {
+    padding-left: 25px !important;
+  }
+
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #26a6e0;
+    border-color: #26a6e0;
+    margin-top: 5px;
+  }
+
+  .ant-table-thead > tr th:nth-child(6) {
+    float: left !important;
+    left: 20px;
+  }
+
+  span.ant-checkbox.ant-checkbox-indeterminate {
+    margin-left: 5px !important;
+  }
+
+  td.ant-table-cell.ant-table-selection-column {
+    float: right !important;
+    margin-left: 13px;
+  }
+
+  .ant-table-tbody > tr > td {
+    border-top: 1px solid #ffffff;
+    padding: 12px 16px 20px 10px !important;
+  }
+
+  .ant-table-tbody::before {
+    content: "";
+    display: block;
+    height: 8px;
+    background-color: #ffffff;
+  }
+
+  .ant-table-tbody > tr {
+    border-radius: 5px !important;
+    overflow: hidden !important;
+  }
+
+  // .ant-radio-wrapper {
+  //   .ant-radio-inner {
+  //     margin-left: -150px !important;
+  //   }
+  // }
+}
+
+.ant-radio-wrapper {
+  .ant-radio-inner {
+    border-color: #26a6e0 !important;
+    border-width: 2px;
+  }
+  .ant-radio-checked .ant-radio-inner {
+    background-color: #26a6e0;
+  }
+}
+
+// .multilingual-tooltip {
+//   left: 1105px !important;
+// }
+
+.ant-switch .ant-switch-inner {
+  min-width: 32px !important;
+}
+
+.middle-line {
+  margin-bottom: 8px;
+  height: 1px;
+  background: #ececec;
+  border: none;
+}
+
+.custom-modal {
+  hr {
+    margin-left: -4%;
+    width: 108%;
+    color: #ececec;
+  }
+
+  .landuage-disabled {
+    color: #000000;
+    background: #f6f6f6;
+    border-radius: 4px;
+    height: 32px;
+    min-width: 272px;
+    text-align: left !important;
+    border: none;
+    span {
+      font-size: 14px;
+      padding: 0px !important;
+      margin-left: -8px;
+      margin-left: -8px;
+      color: #000000;
+    }
+  }
+  .anticon svg {
+    margin-top: -5px !important;
+  }
+  .ok-button {
+    background-color: #ffffff;
+    border: 1px solid #131313;
+    color: #131313;
+    width: 78px;
+    height: 40px;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .signIn .userAuth {
+    background: #e3eef7;
+  }
+  .loginBG {
+    display: none;
+  }
+  .mainLogo {
+    width: 85px;
+  }
+  .mbsb-logo {
+    display: none;
+  }
+  .mbsb-logo-sm {
+    width: 90% !important;
+    max-width: 8%;
+  }
+  .less-screen-size-600 {
+    display: block;
+  }
+  .walletUser {
+    font-size: 13px;
+  }
+  // .walletUserType {
+  //   font-size: 10px;
+  //   margin-top: 15px;
+  //   width: 205px;
+  // }
+  .walletUserType {
+    font-size: 10px;
+    margin-top: 15px;
+    width: 205px;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+  }
+  .user-profile-img {
+    width: 25px;
+  }
+  .user-notification-img {
+    width: 25px;
+    margin-top: 9px;
+  }
+  // .container-body {
+  //   margin-top: 0;
+  // }
+  .active-nav {
+    display: none;
+  }
+  #navigation-container {
+    height: 55px;
+  }
+  #main-navbar {
+    ul {
+      margin-left: 35px !important;
+    }
+  }
+  .custom-navigation {
+    height: 54px;
+    li.nav-item {
+      padding-left: 35%;
+    }
+    li {
+      img {
+        width: 20px;
+      }
+    }
+  }
+  .walletSummaryTypes {
+    .float-start {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .float-end {
+      margin-right: 20%;
+    }
+  }
+  .walletRefunds {
+    .float-start {
+      width: 100%;
+      border-bottom: 1px solid #ebebeb;
+      left: 0;
+    }
+    .float-end {
+      border: none !important;
+      float: left !important;
+      padding-left: 0 !important;
+    }
+  }
+  .walletTansations {
+    .float-end {
+      margin-top: 15px;
+      margin-right: 10%;
+    }
+  }
+  .passwordShowIcon {
+    right: -5px;
+  }
+}
+:where(.css-dev-only-do-not-override-k83k30).ant-table-wrapper
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child {
+  > *:first-child {
+    border-start-start-radius: 0 !important;
+  }
+  > *:last-child {
+    border-start-end-radius: 0 !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .wdzp-logo {
+    left: 11px;
+    top: 18px;
+  }
+}
+@media (min-width: 576px) and (max-width: 1024px) {
+  .signIn .userAuth {
+    background: #e3eef7;
+  }
+  .loginBG {
+    display: none;
+  }
+  .flex-sm-column {
+    flex-direction: row !important;
+  }
+  #navigation-container {
+    width: 100%;
+  }
+
+  .mbsb-logo {
+    display: none;
+  }
+  .mbsb-logo-sm {
+    width: 100% !important;
+  }
+  .custom-navigation {
+    li.nav-item {
+      padding-left: 60%;
+    }
+    .active-nav {
+      display: none;
+    }
+  }
+  .container-body {
+    margin-top: 0;
+  }
+  .walletRefunds {
+    .float-end {
+      margin-right: 140px !important;
+    }
+  }
+  .dasboardBorderLine {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  .WalletFilters {
+    .card-body {
+      display: flexbox;
+    }
+  }
+  .less-screen-size-768 {
+    display: block !important;
+  }
+}
+@media (min-width: 991px) and (max-width: 1024px) {
+  .col-lg-11 {
+    width: 100% !important;
+  }
+  .walletRefunds .float-end {
+    margin-right: 0 !important;
+  }
+  .WalletFilters {
+    .col-lg-6 {
+      width: 10%;
+    }
+    .col-sm-6 {
+      width: 25%;
+    }
+    .col-sm-3 {
+      width: 15%;
+    }
+  }
+  .fiatCurrentLimits {
+    .col-lg-3 {
+      width: 100%;
+    }
+  }
+  .passwordShowIcon {
+    right: -10px;
+  }
+}
+@media only screen and (min-width: 1787px) {
+  .passwordShowIcon {
+    right: 10px;
+  }
+}
+
+th.ant-table-cell.ant-table-column-sort.ant-table-column-has-sorters {
+  pointer-events: none;
+  img {
+    pointer-events: all;
+  }
+}
+
+.ant-dropdown-menu-title-content {
+  a {
+    text-decoration: none;
+  }
+}
+
+// .outer {
+//   background: #ffffff;
+//   border-radius: 15px;
+//   border: 1px solid #dddddd;
+// }
+// .one {
+//   padding: 5px;
+//   border-bottom: 1px solid #dddddd;
+// }
+
+.AssetsTokenTypes {
+  border-radius: 15px;
+
+  .ant-card-head {
+    min-height: 45px !important;
+    height: 45px !important;
+  }
+
+  .headerFisrtTitle {
+    background: #ffecc0;
+    position: absolute;
+    padding: 9px 35px 36px 125px;
+    z-index: 0;
+    top: 0px;
+    left: 0;
+    border-top-left-radius: 13px;
+  }
+
+  .ant-card-body {
+    padding: 0 !important;
+  }
+}
+
+.ant-checkbox {
+  font-size: 12px !important;
+}
+
+.main-custom {
+  .ant-btn {
+    border: none !important;
+  }
+}
+
+.issuance-logo {
+  margin-left: 20px;
+}

@@ -1,0 +1,12 @@
+// Override default bootstrap variables before the import
+$font-family-sans-serif: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
+$warning: #ffc235;
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
+
+h1,
+.h1 {
+  font-size: calc(1.075rem + 1.5vw);
+}

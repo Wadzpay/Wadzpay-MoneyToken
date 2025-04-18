@@ -1,0 +1,53 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Arial.ttf",
+      "sha1": "94ed380f23abc185b81be96b94001368e79164ae"
+    },
+    {
+      "path": "assets/fonts/Helvetica-Bold.ttf",
+      "sha1": "d064906892c6baf2916d5102910026ba0a4f2664"
+    },
+    {
+      "path": "assets/fonts/HelveticaNeue-Light.ttf",
+      "sha1": "14236487c484725caf35ed434068fca8ab7e750f"
+    },
+    {
+      "path": "assets/fonts/HelveticaNeue-Medium.ttf",
+      "sha1": "5b235bd8ab01aa99e3a2a66daea10350a9d254ed"
+    },
+    {
+      "path": "assets/fonts/Montserrat-Light.ttf",
+      "sha1": "6f21894a80049259ef71fcba135218695b41b67a"
+    },
+    {
+      "path": "assets/fonts/Montserrat-LightItalic.ttf",
+      "sha1": "8e980f76a35675acd586f829dd2ae8d002dd97d6"
+    },
+    {
+      "path": "assets/fonts/Montserrat-Regular.ttf",
+      "sha1": "de57aa03e4821fdbe6c34ec2c895e8b5c914e837"
+    },
+    {
+      "path": "assets/fonts/Rubik-Light.ttf",
+      "sha1": "d787342d65c099498babc2be83cc10c24f24cfca"
+    },
+    {
+      "path": "assets/fonts/Rubik-Medium.ttf",
+      "sha1": "dfb3bb5c226cf55f1dd579caf8e8829753d0e71c"
+    },
+    {
+      "path": "assets/fonts/Rubik-Regular.ttf",
+      "sha1": "a68256ef0c0a3a7b597dba28408e584cf24c1e56"
+    },
+    {
+      "path": "assets/fonts/helvetica-light.ttf",
+      "sha1": "a7d02da118efb487c83136ea82b1d40e19dc019b"
+    },
+    {
+      "path": "assets/fonts/helvetica.ttf",
+      "sha1": "53cb59bdb997dd39dc70b95d50133583e66ebdcb"
+    }
+  ]
+}

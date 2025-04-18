@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="20dp"
+    tools:context="com.wadzpay.ddflibrary.activities.zReqJavaActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <RelativeLayout
+        android:id="@+id/rl_top_user_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_back_common"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/iv_back_common"
+            android:text="@string/user_settings"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_view_tablet"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:id="@+id/iv_sign_out_req_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_logout"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_sign_out_user_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/iv_sign_out_req_pay"
+            android:text="@string/sign_out"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_view_tablet"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lyt_email_phone_user_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_top_user_set"
+        android:layout_marginTop="@dimen/top_margin_tablet"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/email_id"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_view_tablet" />
+
+            <TextView
+                android:id="@+id/tv_email_user_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email_email_com"
+                android:textColor="@color/ddf_lib_color"
+                android:textSize="@dimen/text_view_email_tablet" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/top_margin_tablet"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/phone_number"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_view_tablet" />
+
+            <TextView
+                android:id="@+id/tv_phone_user_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_number_sample"
+                android:textColor="@color/ddf_lib_color"
+                android:textSize="@dimen/text_view_tablet" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/lyt_email_phone_user_set"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_change_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_password"
+            android:textColor="@color/ddf_lib_color"
+            android:textSize="@dimen/text_view_tablet" />
+
+        <Button
+            android:id="@+id/btn_static_qr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sdk_common_top_bottom_20"
+            android:background="@drawable/btn_corners_gray"
+            android:padding="@dimen/button_padding_tablet"
+            android:text="@string/generate_static_qr"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_view_qr_tablet"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/dark_gray"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_delete_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_account"
+            android:textColor="@color/red"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</RelativeLayout>

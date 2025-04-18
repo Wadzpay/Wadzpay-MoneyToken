@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/sdk_common_top_bottom_20"
+    android:background="@android:color/white"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:id="@+id/rl_d_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_d_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/sdk_common_padding"
+            android:text="title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_d_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_d_top"
+        android:layout_marginTop="@dimen/sdk_common_top_bottom_20"
+        >
+
+        <LinearLayout
+            android:layout_marginLeft="@dimen/sdk_common_top_bottom_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_d_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/sdk_common_padding"
+                android:text="@string/do_you_want_to_cancel"
+                android:textColor="@color/border_gray" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_d_msg"
+        android:layout_marginTop="@dimen/sdk_common_top_bottom_30">
+
+        <TextView
+            android:id="@+id/tv_d_yes_discard"
+            style="@style/ButtonThemeSmallStyle"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="@string/yes_discard"
+            android:textColor="@color/ddf_lib_color"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_d_save_later"
+            style="@style/ButtonThemeSmallStyle"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="@string/yes_save_for_later"
+            android:textColor="@color/ddf_lib_color"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

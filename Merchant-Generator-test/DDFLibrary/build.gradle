@@ -1,0 +1,68 @@
+plugins {
+    id 'com.android.library'
+//    id 'com.jfrog.bintray'
+//    id 'com.github.dcendents.android-maven'
+
+//    group = 'com.wadzpay.ddflibrary' // Change this to match your package name
+//    version = '1.0.4'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 31
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+//    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+//    implementation 'com.google.zxing:core:3.2.0'
+    implementation 'com.google.zxing:core:3.3.3'
+//    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.annotation:annotation:1.1.0'
+
+    implementation 'com.amazonaws:aws-android-sdk-core:2.41.0'
+    implementation 'com.amplifyframework:aws-auth-cognito:1.32.1'
+
+    // Coroutines to make the HTTP requests asynchronous(In the background thread)
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    // Okhttp3 for the POST requests
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    // Gson to convert raw JSON to pretty JSON
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+
+}

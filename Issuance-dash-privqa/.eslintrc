@@ -1,0 +1,50 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "prettier",
+    "import"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "prettier/prettier": ["error",{
+      "endOfLine": "auto"}
+    ],
+    "no-extra-semi": "off",
+    "comma-dangle": "off",
+    "semi": ["error", "never"],
+    "react-hooks/rules-of-hooks": "error",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "types": {
+          "{}": false
+        },
+        "extendDefaults": true
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [["builtin", "external"], ["parent", "sibling"], "index"],
+        "newlines-between": "always"
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  }
+}

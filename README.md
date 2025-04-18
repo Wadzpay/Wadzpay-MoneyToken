@@ -1,0 +1,1 @@
+# Wadzpay-MoneyToken

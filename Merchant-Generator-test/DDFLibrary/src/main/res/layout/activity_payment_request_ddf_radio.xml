@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="20dp"
+    tools:context="com.wadzpay.ddflibrary.activities.zReqJavaActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <RelativeLayout
+        android:id="@+id/rl_top_req_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_back_common"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:text="@string/screens_title"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_view_tablet"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_sign_out_req_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_sign_out"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_profile_req_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_settings"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/lyt_profile_req_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_circle_profile"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_profile_req_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_view_tablet"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_top_req_pay">
+
+        <RelativeLayout
+            android:id="@+id/rl_top_temp_req_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:id="@+id/rl_tv_et_hint_btc_req_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/rl_conversions_req_pay"
+            android:layout_below="@id/rl_top_temp_req_pay"
+            android:layout_alignParentRight="true"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_et_hint_btc_req_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/btn_corners_aed_two"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="AED"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <!-- currency radio -->
+        <RelativeLayout
+            android:id="@+id/rl_spinner_currency_select_req_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/top_margin_tablet"
+            android:layout_toLeftOf="@id/rl_tv_et_hint_btc_req_pay"
+            android:background="@drawable/btn_corners_white"
+            android:gravity="center"
+            android:padding="10dp"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:layout_centerVertical="true"
+                    android:id="@+id/rl_currency_one_select_req_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_select_req_pay"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_currency_btc"
+                        android:visibility="visible" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/rl_currency_one_select_req_pay">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:id="@+id/tv_currency_code_select_req_pay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/select_digital_asset"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_view_tablet"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_currency_name_select_req_pay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bitcoin"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/tv_et_hint_btc_req_pay1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="2dp"
+                        android:background="@drawable/btn_corners_aed"
+                        android:padding="10dp"
+                        android:text="AED"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_currency_select_req_pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_toLeftOf="@id/tv_et_hint_btc_req_pay1"
+                        android:src="@drawable/ic_btc_options" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+        <!-- end currency radio -->
+
+        <!--et title ui-->
+        <RelativeLayout
+            android:id="@+id/rl_amount_req_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_spinner_currency_select_req_pay"
+            android:layout_marginTop="@dimen/top_margin_tablet"
+            android:layout_toLeftOf="@id/rl_tv_et_hint_btc_req_pay"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_b_req_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_amount"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_b_req_pay"
+                android:layout_marginTop="10dp">
+                <!--et ui-->
+                <RelativeLayout
+                    android:id="@+id/rl_et_hint_btc_req_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_corners_white">
+
+                    <TextView
+                        android:id="@+id/tv_et_hint_btc_req_pay2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="2dp"
+                        android:background="@drawable/btn_corners_aed"
+                        android:padding="12dp"
+                        android:text="@string/fiat"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_view_tablet"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/iv_amount_radio_req_pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@id/tv_et_hint_btc_req_pay2"
+                        android:src="@drawable/ic_btc_options"
+                        android:visibility="visible" />
+
+                    <EditText
+                        android:id="@+id/et_btc_req_pay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/iv_amount_radio_req_pay"
+                        android:background="@null"
+                        android:digits="0123456789."
+                        android:gravity="left"
+                        android:hint="@string/enter_fiat_amount"
+                        android:inputType="number"
+                        android:maxLength="12"
+                        android:padding="10dp"
+                        android:textSize="@dimen/text_view_tablet"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tv_select_amount_req_pay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/iv_amount_radio_req_pay"
+                        android:drawableRight="@drawable/ic_btc_options"
+                        android:gravity="center_horizontal"
+                        android:padding="10dp"
+                        android:text="0"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btn_radio_amount_req_pay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:layout_toLeftOf="@id/iv_amount_radio_req_pay"
+                        android:background="@drawable/btn_radio_amount"
+                        android:padding="10dp"
+                        android:text="0"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/text_color"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+                <View
+                    android:id="@+id/view_amount_req_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/rl_et_hint_btc_req_pay"
+                    android:background="@color/border_gray"
+                    android:visibility="gone" />
+
+                <Spinner
+                    android:id="@+id/spinner_amount_req_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/view_amount_req_pay"
+                    android:layout_centerHorizontal="true"
+                    android:dropDownVerticalOffset="25dp"
+                    android:overlapAnchor="false"
+                    android:spinnerMode="dialog"
+                    android:visibility="invisible" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_et_hint_usd_req_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view_amount_req_pay"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_et_hint_usd_req_pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:paddingRight="10dp"
+                        android:text="AED"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_usd_req_pay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/tv_et_hint_usd_req_pay"
+                        android:background="@null"
+                        android:digits="0123456789."
+                        android:gravity="right"
+                        android:inputType="number"
+                        android:padding="10dp" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+        <!-- end et title ui-->
+
+
+        <!--radio group-->
+        <RelativeLayout
+            android:id="@+id/rl_rg_req_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_spinner_currency_select_req_pay"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/tv_fiat_temp_req_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/btn_corners_aed_two"
+                android:padding="12dp"
+                android:text="AED"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_fiat_two_req_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_fiat_temp_req_pay"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/btn_corners_aed_two"
+                android:padding="12dp"
+                android:text="AED"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+            <RadioGroup
+                android:id="@+id/rg_req_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/tv_fiat_two_req_pay"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_btn_req_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:button="@android:color/transparent"
+                    android:padding="10dp"
+                    android:text="@string/select_digital_currency"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+                <RadioButton
+                    android:id="@+id/rb_et_req_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:button="@android:color/transparent"
+                    android:padding="10dp"
+                    android:text="@string/enter_amount"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/et_radio_amount_req_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_fiat_temp_req_pay"
+                android:layout_alignBaseline="@id/tv_fiat_two_req_pay"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/tv_fiat_two_req_pay"
+                android:digits="0123456789."
+                android:hint="@string/enter_amount"
+                android:inputType="number"
+                android:visibility="gone" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/btn_corners_app_color"
+                android:padding="10dp"
+                android:text="0"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/text_color"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+        <!--end radio group-->
+        <RelativeLayout
+            android:id="@+id/rl_conversions_req_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_amount_req_pay"
+            android:layout_marginTop="@dimen/top_margin_tablet">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_conversions_req_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_corners_app_color"
+                    android:padding="@dimen/button_padding_tablet"
+                    android:text="@string/convert_to_digital_asset"
+                    android:textAllCaps="false"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_view_tablet"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_proceed_req_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_corners_app_color"
+                    android:text="@string/proceed"
+                    android:textAllCaps="false"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/text_color"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_conversions_options_req_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_conversions_req_pay"
+            android:layout_marginTop="@dimen/top_margin_tablet"
+
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/rl_currency_req_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_currency_req_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/currency"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_spinner_currency_req_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_currency_req_pay"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/btn_corners_white"
+                    android:padding="10dp"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_centerVertical="true"
+                            android:id="@+id/rl_currency_one_req_pay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_currency_code_img_req_pay"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/ic_currency_btc"
+                                android:visibility="visible" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/rl_currency_one_req_pay">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp">
+
+                                <TextView
+                                    android:id="@+id/tv_currency_code_req_pay"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="3dp"
+                                    android:text="@string/btc"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_view_tablet"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_currency_name_req_pay"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="3dp"
+                                    android:text="@string/bitcoin"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true">
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:id="@+id/iv_currency_options_req_pay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:src="@drawable/ic_btc_options" />
+
+                            <RelativeLayout
+                                android:id="@+id/rl_btc_right_req_pay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toLeftOf="@id/iv_currency_options_req_pay">
+
+                                <TextView
+                                    android:id="@+id/tv_amount_req_pay"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:padding="3dp"
+                                    android:text="0.00449 BTC"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_view_tablet"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tv_amount_req_pay"
+                                    android:layout_alignParentRight="true"
+                                    android:padding="3dp"
+                                    android:text="$180.79 USD"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <Spinner
+                    android:id="@+id/spinner_currencies"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/rl_spinner_currency_req_pay"
+                    android:layout_centerHorizontal="true"
+                    android:dropDownVerticalOffset="25dp"
+                    android:overlapAnchor="false"
+                    android:spinnerMode="dialog"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_fee_req_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_currency_req_pay"
+                android:layout_marginTop="20dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_payment_mode_req_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Payment Mode"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_currency_code_mode_req_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_payment_mode_req_pay"
+                    android:layout_marginTop="10dp"
+                    android:text="BTC"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_payment_mode_req_pay"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_currency_amount_mode_req_pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="0.000000987"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_fee_usd_req_pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_currency_amount_mode_req_pay"
+                        android:layout_alignParentRight="true"
+                        android:text="0.04 USD"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_qr_format_req_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_currency_req_pay"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_corners_white"
+                android:padding="5dp"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_qr_format_req_pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:text="QR Format 1"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true">
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:id="@+id/iv_qr_format_req_pay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:src="@drawable/ic_btc_options" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_bottom_req_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/rl_disclaimer_pay_req"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/cb_disclaimer_pay_req"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rate is valid for 5 Seconds"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_proceed_req_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_disclaimer_pay_req"
+                android:background="@drawable/btn_corners_app_color"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/proceed"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_view_tablet"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrow_right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_cancel_req_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_proceed_req_pay"
+                android:layout_marginTop="@dimen/top_margin_tablet"
+                android:background="@drawable/btn_corners_gray"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/cancel"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_view_tablet"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,24 @@
+.error-handle-main {
+  margin: 30px;
+  font-size: 18px;
+  line-height: 30px;
+  .login-text {
+    color: blue;
+    font-weight: bold;
+    padding: 0px 5px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .error-text {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+  }
+  .error-img-section {
+    text-align: center;
+    .error-img {
+      padding-top: 20px;
+      height: 500px;
+    }
+  }
+}

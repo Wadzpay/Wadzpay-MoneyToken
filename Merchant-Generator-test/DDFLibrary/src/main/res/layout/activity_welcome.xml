@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_welcome_image_bg"
+    android:padding="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_skip_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:padding="10dp"
+            android:text="Skip"
+            android:textColor="@color/ddf_lib_color"
+            android:textSize="@dimen/text_view_tablet" />
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/iv_img_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/welcome_iv_tablet"
+            android:layout_below="@id/tv_skip_welcome"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ic_welcome_3" />
+
+        <TextView
+            android:id="@+id/tv_title_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_img_welcome"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="@string/welcome_message_one"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_view_tablet"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title_welcome"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/welcome_description_one"
+            android:textColor="@color/black"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp">
+
+            <Button
+                android:id="@+id/btn_login_welcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_corners_app_color"
+                android:padding="@dimen/button_padding_tablet"
+                android:text="@string/login"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_view_tablet"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_create_welcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_login_welcome"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_corners_gray"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

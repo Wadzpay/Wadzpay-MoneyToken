@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "~images/*": ["./assets/images/*"],
+      "~/*": ["src/*"]
+    }
+  },
+  "extends": "@tsconfig/react-native/tsconfig.json"
+}

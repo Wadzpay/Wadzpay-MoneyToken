@@ -1,0 +1,951 @@
+version: 2.1
+orbs:
+  aws-cli: circleci/aws-cli@5.1.0
+  aws-ecr: circleci/aws-ecr@9.3
+  aws-ecs: circleci/aws-ecs@02.2.1
+  slack: circleci/slack@4.1
+
+machine: true
+commands:
+  notify_slack_error:
+    steps:
+      - slack/notify:
+          event: fail
+          custom: |
+            {
+            	"blocks": [
+            		{
+            			"type": "header",
+            			"text": {
+            				"type": "plain_text",
+            				"text": ":ahhhhhhhhh: $CIRCLE_BUILD_NUM : Deployment FAILED! :red_circle:",
+            				"emoji": true
+            			}
+            		},
+            		{
+            			"type": "divider"
+            		},
+            		{
+            			"type": "section",
+            			"fields": [
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Repo:* \n$CIRCLE_PROJECT_REPONAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Branch:* \n*$CIRCLE_BRANCH*"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*By*: $CIRCLE_USERNAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*When*: $(date +'%m/%d/%Y %T')"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Status*: :alert:"
+            				}
+            			]
+            		},
+            		{
+            			"type": "actions",
+            			"elements": [
+            				{
+            					"type": "button",
+            					"text": {
+            						"type": "plain_text",
+            						"text": "Failed"
+            					},
+            					"url": "${CIRCLE_BUILD_URL}",
+            					"style": "danger"
+            				}
+            			]
+            		},
+            		{
+            			"type": "divider"
+            		}
+            	]
+            }
+  notify_slack_pass:
+    steps:
+      - slack/notify:
+          event: pass
+          custom: |
+            {
+            	"blocks": [
+            		{
+            			"type": "header",
+            			"text": {
+            				"type": "plain_text",
+            				"text": ":large_blue_circle: $CIRCLE_BUILD_NUM : Deployment Successful! :large_blue_circle:",
+            				"emoji": true
+            			}
+            		},
+            		{
+            			"type": "divider"
+            		},
+            		{
+            			"type": "section",
+            			"fields": [
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Repo:* \n$CIRCLE_PROJECT_REPONAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Branch:* \n*$CIRCLE_BRANCH*"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*By*: $CIRCLE_USERNAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*When*: $(date +'%m/%d/%Y %T')"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Status*: :aaw_yeah:"
+            				}
+            			]
+            		},
+            		{
+            			"type": "actions",
+            			"elements": [
+            				{
+            					"type": "button",
+            					"text": {
+            						"type": "plain_text",
+            						"text": "Pass"
+            					},
+            					"url": "${CIRCLE_BUILD_URL}",
+            					"style": "primary"
+            				}
+            			]
+            		},
+            		{
+            			"type": "divider"
+            		}
+            	]
+            }
+  notify_slack_pass_test:
+    steps:
+      - slack/notify:
+          channel: 'C03PN9E916J'
+          event: pass
+          custom: |
+            {
+            	"blocks": [
+            		{
+            			"type": "header",
+            			"text": {
+            				"type": "plain_text",
+            				"text": ":large_blue_circle: $CIRCLE_BUILD_NUM : Deployment In-Progress! Available in 5-10 min. :large_blue_circle:",
+            				"emoji": true
+            			}
+            		},
+            		{
+            			"type": "divider"
+            		},
+            		{
+            			"type": "section",
+            			"fields": [
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Repo:* \n$CIRCLE_PROJECT_REPONAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Branch:* \n*$CIRCLE_BRANCH*"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*By*: $CIRCLE_USERNAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*When*: $(date +'%m/%d/%Y %T')"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Status*: :aaw_yeah:"
+            				}
+            			]
+            		},
+            		{
+            			"type": "actions",
+            			"elements": [
+            				{
+            					"type": "button",
+            					"text": {
+            						"type": "plain_text",
+            						"text": "View Test APIs"
+            					},
+            					"url": "https://api.test.wadzpay.com/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config",
+            					"style": "primary"
+            				}
+            			]
+            		},
+            		{
+            			"type": "divider"
+            		}
+            	]
+            }
+  notify_slack_pass_uat:
+    steps:
+      - slack/notify:
+          channel: 'C03PN9Q3LRL'
+          event: pass
+          custom: |
+            {
+            	"blocks": [
+            		{
+            			"type": "header",
+            			"text": {
+            				"type": "plain_text",
+            				"text": ":large_blue_circle: $CIRCLE_BUILD_NUM : Deployment In-Progress! Available in 5-10 min. :large_blue_circle:",
+            				"emoji": true
+            			}
+            		},
+            		{
+            			"type": "divider"
+            		},
+            		{
+            			"type": "section",
+            			"fields": [
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Repo:* \n$CIRCLE_PROJECT_REPONAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Branch:* \n*$CIRCLE_BRANCH*"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*By*: $CIRCLE_USERNAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*When*: $(date +'%m/%d/%Y %T')"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Status*: :aaw_yeah:"
+            				}
+            			]
+            		},
+            		{
+            			"type": "actions",
+            			"elements": [
+            				{
+            					"type": "button",
+            					"text": {
+            						"type": "plain_text",
+            						"text": "View UAT APIs"
+            					},
+            					"url": "https://api.uat.wadzpay.com/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config",
+            					"style": "primary"
+            				}
+            			]
+            		},
+            		{
+            			"type": "divider"
+            		}
+            	]
+            }
+  notify_slack_pass_prod:
+    steps:
+      - slack/notify:
+          event: pass
+          channel: 'C03QJLQUBEC'
+          custom: |
+            {
+            	"blocks": [
+            		{
+            			"type": "header",
+            			"text": {
+            				"type": "plain_text",
+            				"text": ":large_blue_circle: $CIRCLE_BUILD_NUM : Deployment In-Progress! Available in 5-10 min. :large_blue_circle:",
+            				"emoji": true
+            			}
+            		},
+            		{
+            			"type": "divider"
+            		},
+            		{
+            			"type": "section",
+            			"fields": [
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Repo:* \n$CIRCLE_PROJECT_REPONAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Branch:* \n*$CIRCLE_BRANCH*"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*By*: $CIRCLE_USERNAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*When*: $(date +'%m/%d/%Y %T')"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Status*: :aaw_yeah:"
+            				}
+            			]
+            		},
+            		{
+            			"type": "actions",
+            			"elements": [
+            				{
+            					"type": "button",
+            					"text": {
+            						"type": "plain_text",
+            						"text": "View PROD APIs"
+            					},
+            					"url": "https://api.wadzpay.com/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config",
+            					"style": "primary"
+            				}
+            			]
+            		},
+            		{
+            			"type": "divider"
+            		}
+            	]
+            }
+  notify_slack_pass_ddf_uat:
+    steps:
+      - slack/notify:
+          event: pass
+          channel: 'C0486V78H5W'
+          custom: |
+            {
+            	"blocks": [
+            		{
+            			"type": "header",
+            			"text": {
+            				"type": "plain_text",
+            				"text": ":large_blue_circle: $CIRCLE_BUILD_NUM : Deployment In-Progress! Available in 5-10 min. :large_blue_circle:",
+            				"emoji": true
+            			}
+            		},
+            		{
+            			"type": "divider"
+            		},
+            		{
+            			"type": "section",
+            			"fields": [
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Repo:* \n$CIRCLE_PROJECT_REPONAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Branch:* \n*$CIRCLE_BRANCH*"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*By*: $CIRCLE_USERNAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*When*: $(date +'%m/%d/%Y %T')"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Status*: :aaw_yeah:"
+            				}
+            			]
+            		},
+            		{
+            			"type": "actions",
+            			"elements": [
+            				{
+            					"type": "button",
+            					"text": {
+            						"type": "plain_text",
+            						"text": "View PROD APIs"
+            					},
+            					"url": "https://api.wadzpay.com/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config",
+            					"style": "primary"
+            				}
+            			]
+            		},
+            		{
+            			"type": "divider"
+            		}
+            	]
+            }
+  notify_slack_pass_ddf:
+    steps:
+      - slack/notify:
+          event: pass
+          channel: 'C047H69VB43'
+          custom: |
+            {
+            	"blocks": [
+            		{
+            			"type": "header",
+            			"text": {
+            				"type": "plain_text",
+            				"text": ":large_blue_circle: $CIRCLE_BUILD_NUM : Deployment In-Progress! Available in 5-10 min. :large_blue_circle:",
+            				"emoji": true
+            			}
+            		},
+            		{
+            			"type": "divider"
+            		},
+            		{
+            			"type": "section",
+            			"fields": [
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Repo:* \n$CIRCLE_PROJECT_REPONAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Branch:* \n*$CIRCLE_BRANCH*"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*By*: $CIRCLE_USERNAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*When*: $(date +'%m/%d/%Y %T')"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Status*: :aaw_yeah:"
+            				}
+            			]
+            		},
+            		{
+            			"type": "actions",
+            			"elements": [
+            				{
+            					"type": "button",
+            					"text": {
+            						"type": "plain_text",
+            						"text": "View PROD APIs"
+            					},
+            					"url": "https://api.wadzpay.com/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config",
+            					"style": "primary"
+            				}
+            			]
+            		},
+            		{
+            			"type": "divider"
+            		}
+            	]
+            }
+  trigger_slack_notification:
+    steps:
+      - slack/notify:
+          custom: |
+            {
+            	"blocks": [
+            		{
+            			"type": "header",
+            			"text": {
+            				"type": "plain_text",
+            				"text": ":rocket: $CIRCLE_BUILD_NUM : New Code Pushed :typingcat:",
+            				"emoji": true
+            			}
+            		},
+            		{
+            			"type": "divider"
+            		},
+            		{
+            			"type": "section",
+            			"fields": [
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Repo:* \n$CIRCLE_PROJECT_REPONAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Branch:* \n*$CIRCLE_BRANCH*"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*By*: $CIRCLE_USERNAME"
+            				},
+            				{
+                              "type":"mrkdwn",
+                              "text":"*When*: $(date +'%m/%d/%Y %T')"
+                            }
+            			]
+            		},
+            		{
+            			"type": "actions",
+            			"elements": [
+            				{
+            					"type": "button",
+            					"text": {
+            						"type": "plain_text",
+            						"text": "View"
+            					},
+            					"url": "${CIRCLE_BUILD_URL}",
+            					"style": "primary"
+            				}
+            			]
+            		},
+            		{
+            			"type": "divider"
+            		}
+            	]
+            }
+          event: always
+  notify_slack_test_passed:
+    steps:
+      - slack/notify:
+          custom: |
+            {
+            	"blocks": [
+            		{
+            			"type": "header",
+            			"text": {
+            				"type": "plain_text",
+            				"text": ":large_blue_circle: $CIRCLE_BUILD_NUM : Test Passed",
+            				"emoji": true
+            			}
+            		},
+            		{
+            			"type": "divider"
+            		},
+            		{
+            			"type": "section",
+            			"fields": [
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Repo:* \n$CIRCLE_PROJECT_REPONAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Branch:* \n*$CIRCLE_BRANCH*"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*By*: $CIRCLE_USERNAME"
+            				},
+            				{
+                              "type":"mrkdwn",
+                              "text":"*When*: $(date +'%m/%d/%Y %T')"
+                            }
+            			]
+            		},
+            		{
+            			"type": "actions",
+            			"elements": [
+            				{
+            					"type": "button",
+            					"text": {
+            						"type": "plain_text",
+            						"text": "View"
+            					},
+            					"url": "${CIRCLE_BUILD_URL}",
+            					"style": "primary"
+            				}
+            			]
+            		},
+            		{
+            			"type": "divider"
+            		}
+            	]
+            }
+          event: pass
+  notify_slack_test_failed:
+    steps:
+      - slack/notify:
+          custom: |
+            {
+            	"blocks": [
+            		{
+            			"type": "header",
+            			"text": {
+            				"type": "plain_text",
+            				"text": " $CIRCLE_BUILD_NUM : Test Failed :alert: ",
+            				"emoji": true
+            			}
+            		},
+            		{
+            			"type": "divider"
+            		},
+            		{
+            			"type": "section",
+            			"fields": [
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Repo:* \n$CIRCLE_PROJECT_REPONAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Branch:* \n*$CIRCLE_BRANCH*"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*By*: $CIRCLE_USERNAME"
+            				},
+            				{
+                              "type":"mrkdwn",
+                              "text":"*When*: $(date +'%m/%d/%Y %T')"
+                            }
+            			]
+            		},
+            		{
+            			"type": "actions",
+            			"elements": [
+            				{
+            					"type": "button",
+            					"text": {
+            						"type": "plain_text",
+            						"text": "View"
+            					},
+            					"url": "${CIRCLE_BUILD_URL}",
+            					"style": "primary"
+            				}
+            			]
+            		},
+            		{
+            			"type": "divider"
+            		}
+            	]
+            }
+          event: fail
+  trigger_slack_hold_notification:
+    steps:
+      - slack/notify:
+          branch_pattern: master,uat
+          mentions: "@U02KQ2RMTT3"
+          custom: |
+            {
+            	"blocks": [
+            		{
+            			"type": "header",
+            			"text": {
+            				"type": "plain_text",
+            				"text": " $CIRCLE_BUILD_NUM : Approval Needed ",
+            				"emoji": true
+            			}
+            		},
+            		{
+            			"type": "divider"
+            		},
+            		{
+            			"type": "section",
+            			"fields": [
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Repo:* \n$CIRCLE_PROJECT_REPONAME"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*Branch:* \n*$CIRCLE_BRANCH*"
+            				},
+            				{
+            					"type": "mrkdwn",
+            					"text": "*By*: $CIRCLE_USERNAME"
+            				},
+            				{
+                              "type":"mrkdwn",
+                              "text":"*When*: $(date +'%m/%d/%Y %T')"
+                            }
+            			]
+            		},
+            		{
+            			"type": "actions",
+            			"elements": [
+            				{
+            					"type": "button",
+            					"text": {
+            						"type": "plain_text",
+            						"text": "View"
+            					},
+            					"url": "${CIRCLE_BUILD_URL}",
+            					"style": "primary"
+            				}
+            			]
+            		},
+            		{
+            			"type": "divider"
+            		}
+            	]
+            }
+          event: always
+  with_cache:
+    description: Restore cache before the specified steps, and save cache afterwars
+    parameters:
+      steps:
+        type: steps
+    steps:
+      - restore_cache:
+          key: gradle-v1-{{ checksum "build.gradle.kts" }}-{{ checksum ".circleci/config.yml" }}
+      - steps: << parameters.steps >>
+      - save_cache:
+          key: gradle-v1-{{ checksum "build.gradle.kts" }}-{{ checksum ".circleci/config.yml" }}
+          paths:
+            - ~/.gradle/caches
+            - ~/.gradle/wrapper
+  collect_test_results:
+    description: Store test results and store them as artifacts
+    steps:
+      - store_test_results:
+          path: build/test-results/
+      - store_artifacts:
+          destination: Results
+          path: build/test-results/
+      - store_artifacts:
+          destination: Reports
+          path: build/reports/
+  install_openjdk:
+    steps:
+      - run:
+          name: Install OpenJDK 11
+          command: |
+            sudo apt-get update && sudo apt-get install openjdk-11-jdk
+            sudo update-alternatives --set java /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+            sudo update-alternatives --set javac /usr/lib/jvm/java-11-openjdk-amd64/bin/javac
+            java -version
+
+jobs:
+  gradle_build_and_test:
+    machine:
+      image: ubuntu-2204:current
+    steps:
+      - trigger_slack_notification
+      - install_openjdk
+      - checkout
+      - with_cache:
+          steps:
+            - run:
+                name: Run ktlint check
+                command: ./gradlew ktlintCheck
+            - run:
+                name: Run gradle clean
+                command: ./gradlew clean
+            - run:
+                name: Run gradle build
+                command: ./gradlew build
+            - run:
+                name: Run tests
+                command: ./gradlew test
+      - collect_test_results
+      - notify_slack_test_passed
+      - notify_slack_test_failed
+  slack_hold:
+    machine:
+      image: ubuntu-2404:2024.05.1
+    steps:
+      - trigger_slack_hold_notification
+  notify_slack:
+    machine:
+      image: ubuntu-2404:2024.05.1
+    steps:
+      - notify_slack_error
+      - notify_slack_pass
+  notify_slack_test:
+    machine:
+      image: ubuntu-2404:2024.05.1
+    steps:
+      - notify_slack_pass_test
+  notify_slack_uat:
+    machine:
+      image: ubuntu-2404:2024.05.1
+    steps:
+      - notify_slack_pass_uat
+  notify_slack_prod:
+    machine:
+      image: ubuntu-2404:2024.05.1
+    steps:
+      - notify_slack_pass_prod
+  notify_slack_ddf:
+    machine:
+      image: ubuntu-2404:2024.05.1
+    steps:
+      - notify_slack_pass_ddf
+  notify_slack_ddf_uat:
+    machine:
+      image: ubuntu-2404:2024.05.1
+    steps:
+      - notify_slack_pass_ddf_uat
+
+
+
+workflows:
+  build_and_deploy:
+    jobs:
+      - gradle_build_and_test
+      # DEV SECTION #
+      - slack_hold
+      - aws-ecr/build_and_push_image:
+          name: docker-build-and-push-dev
+          filters: &filters-dev
+            branches:
+              only: dev
+          region: "${AWS_REGION_DEV}"
+          account_id: "${account_id_dev}"
+          auth:
+            - aws-cli/setup:
+                role_arn: arn:aws:iam::214985727475:role/circleci-oidc-role
+          repo: "wadzpay-dev"
+          tag: "latest,${CIRCLE_SHA1}"
+          requires:
+            - gradle_build_and_test
+      - aws-ecs/deploy-service-update:
+          name: ecs-deploy-dev
+          filters:
+            <<: *filters-dev
+          requires:
+            - docker-build-and-push-dev
+          aws-access-key-id: AWS_ACCESS_KEY_ID_DEV
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_DEV
+          aws-region: AWS_REGION_DEV
+          service-name: "${AWS_RESOURCE_PREFIX}-ecs-service-dev"
+          family: "${AWS_ECS_CONTAINER_NAME}"
+          cluster-name: "${AWS_RESOURCE_PREFIX}-ecs-cluster-dev"
+          container-image-name-updates: "container=${AWS_ECS_CONTAINER_NAME},tag=${CIRCLE_SHA1}"
+      - notify_slack:
+          name: slack-notif-dev
+          requires:
+            - ecs-deploy-dev
+
+      # TEST SECTION #
+      - slack_hold
+      - aws-ecr/build_and_push_image:
+          name: docker-build-and-push-test
+          filters: &filters-test
+            branches:
+              only: test
+          region: "${AWS_REGION_TEST}"
+          account_id: "${account_id_test}"
+          auth:
+            - aws-cli/setup:
+                role_arn: arn:aws:iam::793673110907:role/circleci-oidc-role
+          repo: "wadzpay-test"
+          tag: "latest,${CIRCLE_SHA1}"
+          requires:
+            - gradle_build_and_test
+      - aws-ecs/deploy-service-update:
+          name: ecs-deploy-test
+          filters:
+            <<: *filters-test
+          requires:
+            - docker-build-and-push-test
+          aws-access-key-id: AWS_ACCESS_KEY_ID_TEST
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_TEST
+          aws-region: AWS_REGION_TEST
+          service-name: "${AWS_RESOURCE_PREFIX}-ecs-service-test"
+          family: "${AWS_ECS_CONTAINER_NAME}"
+          cluster-name: "${AWS_RESOURCE_PREFIX}-ecs-cluster-test"
+          container-image-name-updates: "container=${AWS_ECS_CONTAINER_NAME},tag=${CIRCLE_SHA1}"
+      - notify_slack:
+          name: slack-notif-test
+          requires:
+            - ecs-deploy-test
+      - notify_slack_test:
+          requires:
+            - slack-notif-test
+      # DEV GEIDEA SECTION #
+      - slack_hold
+      - aws-ecr/build_and_push_image:
+          name: docker-build_and_push-geidea-dev
+          filters: &filters-geidea-dev
+            branches:
+              only: geidea-dev
+          region: "${AWS_REGION_GEIDEA_DEV}"
+          account_id: "${ACCOUNT_ID_GEIDEA_DEV}"
+          auth:
+            - aws-cli/setup:
+                role_arn: arn:aws:iam::427254333705:role/circleci-oidc-role
+          repo: "wadzpay-geidea-dev"
+          tag: "latest,${CIRCLE_SHA1}"
+          requires:
+            - gradle_build_and_test
+      - aws-ecs/deploy-service-update:
+          name: ecs-deploy-geidea-dev
+          filters:
+            <<: *filters-geidea-dev
+          requires:
+            - docker-build_and_push-geidea-dev
+          aws-access-key-id: AWS_ACCESS_KEY_ID_GEIDEA_DEV
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_GEIDEA_DEV
+          aws-region: AWS_REGION_GEIDEA_DEV
+          service-name: "${AWS_RESOURCE_PREFIX}-ecs-service-geidea-dev"
+          family: "${AWS_ECS_CONTAINER_NAME}"
+          cluster-name: "${AWS_RESOURCE_PREFIX}-ecs-cluster-geidea-dev"
+          container-image-name-updates: "container=${AWS_ECS_CONTAINER_NAME},tag=${CIRCLE_SHA1}"
+
+
+      # TEST GEIDEA SECTION #
+      - slack_hold
+      - aws-ecr/build_and_push_image:
+          name: docker-build-and-push-geidea-test
+          filters: &filters-geidea-test
+            branches:
+              only: geidea-test
+          region: "${AWS_REGION_GEIDEA_TEST}"
+          account_id: "${ACCOUNT_ID_GEIDEA_TEST}"
+          auth:
+            - aws-cli/setup:
+                role_arn: arn:aws:iam::128041356714:role/circleci-oidc-role
+          repo: "wadzpay-geidea-test"
+          tag: "latest,${CIRCLE_SHA1}"
+          requires:
+            - gradle_build_and_test
+      - aws-ecs/deploy-service-update:
+          name: ecs-deploy-geidea-test
+          filters:
+            <<: *filters-geidea-test
+          requires:
+            - docker-build-and-push-geidea-test
+          aws-access-key-id: AWS_ACCESS_KEY_ID_GEIDEA_TEST
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_GEIDEA_TEST
+          aws-region: AWS_REGION_GEIDEA_TEST
+          service-name: "${AWS_RESOURCE_PREFIX}-ecs-service-geidea-test"
+          family: "${AWS_ECS_CONTAINER_NAME}"
+          cluster-name: "${AWS_RESOURCE_PREFIX}-ecs-cluster-geidea-test"
+          container-image-name-updates: "container=${AWS_ECS_CONTAINER_NAME},tag=${CIRCLE_SHA1}"
+      # PROD PRIVATECHAIN SECTION #
+      - slack_hold
+      - hold-privatechain-prod:
+          filters: &filters-privatechain-prod
+            branches:
+              only: privatechain-prod
+          type: approval
+          requires:
+            - gradle_build_and_test
+      - aws-ecr/build_and_push_image:
+          name: docker-build-and-push-privatechain-prod
+          filters: &filters-privatechain-prod
+            branches:
+              only: privatechain-prod
+          region: "${AWS_REGION_PRIVATECHAIN_PROD}"
+          account_id: "${ACCOUNT_ID_PRIVATECHAIN_PROD}"
+          auth:
+            - aws-cli/setup:
+                role_arn: arn:aws:iam::471112829728:role/circleci-oidc-role
+          repo: "wadzpay-privatechain-prod"
+          tag: "latest,${CIRCLE_SHA1}"
+          requires:
+            - gradle_build_and_test
+      - aws-ecs/deploy-service-update:
+          name: ecs-deploy-privatechain-prod
+          filters:
+            <<: *filters-privatechain-prod
+          requires:
+            - docker-build-and-push-privatechain-prod
+          aws-access-key-id: AWS_ACCESS_KEY_ID_PRIVATECHAIN_PROD
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_PRIVATECHAIN_PROD
+          aws-region: AWS_REGION_PRIVATECHAIN_PROD
+          service-name: "${AWS_RESOURCE_PREFIX}-ecs-service-privatechain-prod"
+          family: "${AWS_ECS_CONTAINER_NAME}"
+          cluster-name: "${AWS_RESOURCE_PREFIX}-ecs-cluster-privatechain-prod"
+          container-image-name-updates: "container=${AWS_ECS_CONTAINER_NAME},tag=${CIRCLE_SHA1}"

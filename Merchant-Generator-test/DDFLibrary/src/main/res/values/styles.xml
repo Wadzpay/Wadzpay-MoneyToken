@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TitleLargeFont">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LargeFontStyle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MediumFontStyle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="SmallFontStyle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="VerySmallFontStyle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ButtonThemeLargeStyle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="background">@drawable/btn_bg_theme</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="ButtonThemeMediumStyle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="background">@drawable/btn_bg_theme</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="ButtonThemeSmallStyle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="background">@drawable/btn_bg_theme</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="NewDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="EditTextSmallFontStyle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:inputType">text</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="Theme.Transparent" parent="android:Theme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+
+        <item name="colorPrimary">@color/ddf_lib_color</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+        <!-- Customize your theme here. -->
+
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="TransparentActivity" >
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <!-- Status bar color. -->
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!--add below code in themes.xml file-->
+    <!--below is the style for transparent activity and here we are using no action bar.-->
+    <style name="Theme.AppCompat.Translucent" parent="Theme.AppCompat.NoActionBar">
+        <!--on below line we are setting background as transparent color-->
+        <item name="android:background">@android:color/transparent</item>
+        <!--on below line we are displaying the windowNotitle as true as we are not displaying our status bar-->
+        <item name="android:windowNoTitle">true</item>
+        <!--on below line we are setting our window background as transparent color-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--on below line we are setting color background cache hint as null-->
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <!--on below line we are adding a window translucent as true-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--on below line we are adding a window animationstyle-->
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+</resources>

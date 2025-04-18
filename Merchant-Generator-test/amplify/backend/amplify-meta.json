@@ -1,0 +1,51 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "************************************",
+      "UnauthRoleArn": "************************************",
+      "AuthRoleArn": "************************************",
+      "Region": "ap-************************************-1",
+      "DeploymentBucketName": "************************************",
+      "UnauthRoleName": "************************************",
+      "StackName": "************************************",
+      "StackId": "************************************",
+      "AmplifyAppId": "************************************"
+    }
+  },
+  "auth": {
+    "wadzpaysigninbd9488d5": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "output": {
+        "UserPoolId": "ap-southeast-************************************",
+        "UserPoolName": "************************************-tf-************************************-pool-test",
+        "AppClientID": "************************************",
+        "AppClientIDWeb": "************************************",
+        "HostedUIDomain": "************************************-pool-test"
+      },
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_UPPERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS"
+          ]
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [],
+        "verificationMechanisms": []
+      },
+      "lastPushTimeStamp": "2021-12-14T09:15:51.296Z"
+    }
+  }
+}

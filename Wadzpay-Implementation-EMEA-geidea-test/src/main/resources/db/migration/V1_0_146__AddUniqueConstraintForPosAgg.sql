@@ -1,0 +1,1 @@
+ALTER TABLE IF EXISTS public.pos add  CONSTRAINT unique_columns_pos UNIQUE (aggregator_preference_id, insitution_preference_id, merchant_group_preference_id, merchant_acquirer_preference_id, sub_merchant_preference_id,outlet_preference_id,pos_id);

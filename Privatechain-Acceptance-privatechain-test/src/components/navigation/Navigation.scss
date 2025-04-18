@@ -1,0 +1,123 @@
+.navigation-menu {
+  border-top: 1px solid #fff;
+  box-shadow: 0 0 2px #ccc;
+  margin-top: 72px;
+  z-index: 10;
+  position: absolute;
+
+
+  .ant-menu-item {
+    // padding-left: 5px !important;
+    margin-top: 15px !important;
+    padding-inline: 0px !important;
+
+    .ant-menu-title-content {
+      font-size: 15px !important;
+      margin-right: 10px;
+    }
+  }
+  .ant-menu-submenu {
+    padding: 0px 0px 0px 0px !important;
+    margin-top: 20px !important;
+  }
+  .ant-menu-sub {
+    .ant-menu-title-content {
+      padding: 1px !important;
+      font-size: 14px !important;
+      margin-left: -10px !important;
+      overflow-wrap: break-word !important;
+      // overflow: auto !important;
+      // text-overflow: ellipsis !important;
+    }
+  }
+  .ant-menu-submenu-title {
+    padding: 0px !important;
+    // color: #000 !important;
+  }
+  .ant-menu-inline {
+    border-inline-end: none !important;
+  }
+  .ant-menu-item-selected {
+    background-color: #e6f4ff;
+    padding: 0px 0px 0px 0px !important;
+    .ant-menu-title-content {
+      color: #000 !important;
+    }
+  }
+  .ant-menu-title-content {
+    display: none !important;
+  }
+  .ant-menu-submenu-arrow {
+    display: none !important;
+    right: 2px !important;
+    color: #8e8e8e !important;
+  }
+  .ant-menu-submenu-open {
+    .ant-menu-sub {
+      display: none !important;
+    }
+  }
+  .ant-menu-submenu-selected {
+    .ant-menu-submenu-title {
+      .ant-menu-title-content {
+        color: #000 !important;
+      }
+    }
+  }
+  .signout-fixed {
+    position: absolute;
+    bottom: 0;
+    background: #fff;
+    height: 120%;
+    width: 50px;
+    left: -7px;
+  }
+}
+//-----------//
+
+.navigation-menu:hover + .container-full {
+  width: 83.33333333% !important;
+  .tableHeader {
+    width: 83.66666666% !important;
+  }
+}
+
+// hovered menu
+.navigation-menu:hover {
+  .ant-menu-title-content,
+  .ant-menu-submenu-arrow {
+    display: block !important;
+  }
+  .ant-menu-submenu-open {
+    .ant-menu-sub {
+      display: block !important;
+    }
+  }
+  .active-nav {
+    right: 169px !important;
+  }
+  .signout-fixed {
+    width: 170px;
+  }
+}
+.navigation-menu:hover + #main-container {
+  width: 100% !important;
+}
+ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light {
+  margin-bottom: 50px;
+}
+
+// Mobile
+.ant-drawer-content-wrapper {
+  height: 100% !important;
+}
+
+.sticky-top {
+  margin-top: 40px !important;
+  z-index: 99 !important;
+}
+
+.nav-active {
+  filter: invert(100%) sepia(50%) saturate(50%) hue-rotate(161deg)
+    brightness(50%) contrast(50%);
+}

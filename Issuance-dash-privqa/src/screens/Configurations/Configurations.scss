@@ -1,0 +1,176 @@
+.configurations {
+  .ant-table-cell {
+    background: none !important;
+  }
+  .wallet-parameter {
+    .ant-table-cell:first-child {
+      width: 30% !important;
+    }
+  }
+  .custom-wallet-parameter {
+    // th.ant-table-cell:nth-child(3),
+    th.ant-table-cell:nth-child(5) {
+      .ant-table-column-title {
+        div {
+          text-align: right;
+          display: revert;
+        }
+      }
+    }
+    // td.ant-table-cell:nth-child(3),
+    td.ant-table-cell:nth-child(5) {
+      text-align: right;
+    }
+  }
+  .transaction-limits {
+    th.ant-table-cell:nth-child(3),
+    th.ant-table-cell:nth-child(4),
+    th.ant-table-cell:nth-child(5) {
+      .ant-table-column-title {
+        div {
+          text-align: right;
+          display: revert !important;
+        }
+      }
+    }
+    td.ant-table-cell:nth-child(3),
+    td.ant-table-cell:nth-child(4),
+    td.ant-table-cell:nth-child(5) {
+      text-align: right;
+    }
+  }
+  .ant-table-cell-row-hover {
+    background: none !important;
+  }
+  .mark-up {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 12px !important;
+    border-radius: 3px;
+    background-color: #fff;
+  }
+  .tableRowsEdit {
+    top: -35px;
+    height: 76px;
+    background: #e9f6fc;
+    bottom: 20px;
+    width: 215.1% !important;
+    border-bottom: 6px solid #f5f4f4;
+    border-top: 2px solid #f5f4f4;
+  }
+  .ant-table-column-sorter {
+    display: none;
+  }
+  .ant-select.ant-select-disabled {
+    .ant-select-selector {
+      background-color: #f6f6f6;
+    }
+  }
+  .ant-input.ant-input-disabled {
+    background-color: #f6f6f6;
+  }
+  .ant-input-number-handler-wrap {
+    display: none !important;
+  }
+  .ant-form-item-explain-error {
+    position: absolute !important;
+    right: 5px;
+    top: 9px !important;
+    cursor: pointer;
+    z-index: 1;
+    padding: 0px 0px 8px 3px;
+    background: #fff;
+  }
+  .transactionLimits-count {
+    .ant-form-item-explain-error {
+      margin-right: 10px !important;
+    }
+  }
+  .transactionLimits-minimum {
+    .ant-form-item-explain-error {
+      margin-right: -15px !important;
+    }
+  }
+  .transactionLimits-maximum {
+    .ant-form-item-explain-error {
+      margin-right: -40px !important;
+    }
+  }
+  .ant-tooltip-inner {
+    color: yellow !important;
+    background-color: green !important;
+  }
+  .valueFixed {
+    .ant-form-item-explain-error {
+      right: 155px !important;
+    }
+    .ant-input-number-input-wrap {
+      width: 127px !important;
+    }
+  }
+}
+.conversion-rate {
+  .tableRowsEdit {
+    top: -35px;
+    height: 80px;
+    background: #e9f6fc;
+    bottom: 20px;
+    width: 183% !important;
+    border-bottom: 6px solid #f5f4f4;
+    border-top: 2px solid #f5f4f4;
+  }
+}
+.conversion-rates-adjustment {
+  .tableRowsEdit {
+    width: 180.1% !important;
+  }
+}
+.tableHeading {
+  color: #1e1e1e;
+  font-size: 14px;
+  font-weight: 600;
+}
+.configurations {
+  .WalletFilters {
+    height: 75px;
+    .ant-form-item-explain-error {
+      font-size: 12px;
+      background: #fff;
+      padding: 0px 1px 8px 3px;
+    }
+    .ant-form-item-with-help .ant-form-item-explain {
+      z-index: 1;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+  }
+}
+:where(.css-dev-only-do-not-override-k83k30).ant-table-wrapper
+  .ant-table:not(.ant-table-bordered)
+  .ant-table-tbody
+  > tr
+  > td {
+  border-top: 1px solid #ffffff;
+  padding: 12px 16px 20px 10px !important;
+}
+.valueClass {
+  border-right: none !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.valueType {
+  .ant-select-selector {
+    // border-left: none !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    margin-left: -32px !important;
+    width: 125px !important;
+  }
+}
+
+@media only screen and (min-width: 1459px) {
+  .navigation-menu:hover {
+    .signout-fixed {
+      width: 182px !important;
+    }
+  }
+}

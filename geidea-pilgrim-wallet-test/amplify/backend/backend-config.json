@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "wadzpaymobile655afb5b": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

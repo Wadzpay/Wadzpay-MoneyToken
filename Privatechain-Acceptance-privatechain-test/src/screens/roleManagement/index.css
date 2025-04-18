@@ -1,0 +1,492 @@
+.role-level-active {
+  height: 40px;
+  color: #006be2;
+  /* boxShadow:"0 0 1px #dedede",*/
+  border-bottom: 1px solid #dedede;
+  align-content: center;
+  padding-left: 16px;
+  font-weight: 700;
+  font-family: Inter;
+  background-color: #ececec;
+}
+
+.role-management {
+  background: white;
+}
+
+.ant-btn:hover {
+  background-color: initial;
+  /* Set background to initial to remove hover effect */
+  color: initial;
+  /* Set color to initial to remove hover effect */
+  border-color: initial;
+  /* Set border color to initial to remove hover effect */
+  box-shadow: none;
+  /* Optionally, remove any box-shadow on hover */
+  /* Add any other styles you want to reset on hover */
+}
+
+.role-header {
+  height: 64px;
+  /* width:"100%",margin:"0px 24px 0px 24px", */
+  background-color: #ffff;
+  align-content: center;
+}
+
+.role-body-row {
+  /*     box-shadow:0 0 2px #ccc;
+ */
+  background-color: white;
+}
+
+.ant-table-wrapper .ant-table-container {
+  border-start-start-radius: 0px;
+  border-start-end-radius: 0px;
+}
+
+.role-nav-col {
+  /*      box-shadow:0 0 2px #ccc;
+ */
+  min-height: 100vh;
+  border-right: 1px solid #dedede !important;
+  border-left: 1px solid #dedede;
+}
+
+.role-nav-col-title {
+  /*     box-shadow:0 0 2px #ccc;
+ */
+  height: 64px;
+  display: block;
+  line-height: 64px;
+  align-content: center;
+  border-bottom: 1px solid #dedede;
+  border-top: 1px solid #dedede;
+  background-color: white;
+}
+
+.level-container-role {
+  line-height: 40px;
+}
+
+/* level-container-role:hover{
+ background-color:#f6f6f6 ;
+} */
+
+.role-title {
+  font-size: 20px;
+  font-family: Inter;
+  line-height: 64px;
+  font-weight: 600;
+}
+
+.role-create-btn {
+  background: #ffc235;
+  color: 00000;
+  align-self: center;
+  margin-right: 8px;
+  border-radius: 4px 4px 4px 4px;
+  height: 40px;
+  font-weight: 600;
+  font-family: Rubik;
+  margin-left: 15px;
+  font-size: 14px;
+  padding: 0px 24px 0px 24px;
+}
+
+.role-empty-btn {
+  background: #ffc235;
+  color: 000000;
+  align-self: center;
+  border-radius: 4px 4px 4px 4px;
+  height: 40px;
+  font-weight: 600;
+  font-family: Rubik;
+  font-size: 14px;
+  padding: 0px 24px 0px 24px;
+}
+
+.role-search-btn {
+  background: #ffc235;
+  color: 000000;
+  border-radius: 4px 4px 4px 4px;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+}
+
+.role-search-btn :hover {
+  /*     background: #F3AA00;
+    border: 1px solid #F3AA00 !important;
+ */
+}
+
+/* .disable-permissions{
+    background-color: #dcdcdc;
+
+} */
+.pagination {
+  display: flex;
+  justify-content: right;
+  margin: 8px 8px 8px 8px;
+}
+
+.role-search-reset-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 90px;
+  border: 1px solid #313131;
+}
+
+.role-create-btn:hover {
+  background: #f3aa00;
+  border: 1px solid #f3aa00 !important;
+}
+
+.status {
+  align-items: center;
+  align-content: center;
+}
+
+.role-empty-btn:hover {
+  background: #f3aa00;
+  border: 1px solid #f3aa00 !important;
+}
+
+.textArea-custom {
+  height: 90px !important;
+  width: 600px !important;
+  line-height: 22px !important;
+  font-family: "Inter";
+  padding: 8px 12px !important;
+}
+
+.textArea-custom::placeholder {
+  color: #c4c4c4;
+  /* Change placeholder text color */
+  font-size: 12px;
+  font-family: "Inter" !important;
+  line-height: 22px;
+  align-self: center;
+}
+
+.label-create {
+  margin-left: 24px;
+  margin-bottom: 4px;
+  color: #2d2d2d;
+  font-family: "Inter";
+  font-size: 12px !important;
+}
+
+.ant-input::placeholder {
+  color: #c4c4c4;
+  /* Change placeholder text color */
+  font-size: 12px;
+  font-family: "Inter" !important;
+  line-height: 32px;
+  align-self: center;
+}
+
+.select-popup {
+  position: relative;
+  z-index: 10;
+  overflow: visible;
+}
+
+.ant-form-item {
+  margin-bottom: 16px;
+}
+
+.input-create {
+  margin-left: 24px;
+  margin-bottom: 4px;
+  line-height: 32px;
+  width: 300px;
+  font-size: 12px;
+  font-family: "Inter";
+  color: #2d2d2d;
+  border: 1px solid #c4c4c4;
+  /*     margin-bottom:16px;
+ */
+}
+
+.ant-input {
+  padding: 0px 10px;
+}
+
+.input-create-select {
+  margin-left: 24px;
+  margin-bottom: 4px;
+  color: #2d2d2d;
+  width: 300px !important;
+  margin-bottom: 16px;
+  line-height: 50px;
+  border-radius: 6px;
+}
+
+.ant-select-dropdown .ant-select-item {
+  font-family: "Inter";
+  font-size: 12px;
+}
+
+.ant-select-single .ant-select-selector {
+  font-family: "Inter";
+  font-size: 12px;
+}
+
+.options-container {
+  border: 1px solid #c4c4c4;
+  padding-top: 8px;
+}
+
+.ant-table-wrapper .ant-table.ant-table-middle {
+  font-size: 12px;
+  font-family: "Inter";
+  color: #313131;
+}
+
+.ant-table-wrapper .ant-table {
+  font-family: "Inter";
+  font-weight: 500;
+  font-kerning: none;
+  font-size: 12px;
+
+  /* font-variant-caps:all-petite-caps ;
+ */
+}
+
+.options {
+  line-height: 32px;
+  font-family: "Inter";
+  font-size: 12px;
+}
+
+.ant-btn-default:hover {
+  background: #f3aa00;
+  border: 1px solid #f3aa00;
+}
+
+.ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before,
+.ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > td:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+  background: #c4c4c4;
+}
+
+.ant-table-wrapper
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  > *:first-child {
+  border-start-start-radius: 0px;
+  border-start-end-radius: 0px;
+}
+
+.ant-table-wrapper
+  .ant-table-container
+  table
+  > thead
+  > tr:first-child
+  > *:last-child {
+  border-start-start-radius: 0px;
+  border-start-end-radius: 0px;
+}
+
+.table-custom th.ant-table-cell {
+  background: #f6f6f6;
+  font-family: "Inter";
+}
+
+.ant-table-thead .ant-table-cell {
+  background-color: #f6f6f6 !important;
+  font-family: "Inter";
+}
+
+.table-custom th.ant-table-cell {
+  background-color: #f6f6f6 !important;
+  font-family: "Inter";
+}
+
+.role-level {
+  height: 40px;
+  /* boxShadow:"0 0 1px #dedede",*/
+  border-bottom: 1px solid #e0e0e0;
+  align-content: center;
+  padding-left: 16px;
+  font-weight: 700;
+  font-family: Inter;
+  background-color: white;
+}
+
+.role-level:hover {
+  color: #006be2;
+  background-color: #f7f7f7;
+}
+
+.role-level-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  flex-direction: column;
+  background-color: blueviolet;
+}
+
+.ant-table-selection-column {
+  width: auto;
+  background-color: white;
+}
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.tableRole {
+  thead,
+  tbody,
+  tfoot,
+  tr,
+  td,
+  th {
+    width: 100%;
+  }
+
+  tr > :nth-child(3) {
+    padding: 0px 70px 0px 70px !important;
+    align-items: start;
+  }
+
+  background-color: white;
+  max-height: 50% !important;
+  /*     padding-left: 10%;
+    padding-right: 20%;
+ */
+  /*     width: 50% !important;  
+ */
+}
+
+.role-table-container {
+  justify-content: space-between;
+}
+
+.role-permission-header {
+  box-shadow: 0 0 2px #ccc;
+  height: 50px;
+  color: #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+  line-height: 64px;
+  align-content: center;
+  border-bottom: 1px solid #dcdcdc;
+  background-color: #fafafa;
+}
+
+.role-permission-header-text {
+  line-height: 50px;
+  margin-left: 16px;
+  font-weight: 700;
+  font-family: Inter;
+  color: #494949;
+}
+
+.row-column-hide {
+  display: none;
+}
+
+.cancel-button {
+  background-color: white;
+  border: 1px solid #ececec;
+  align-self: center;
+  margin-right: 8px;
+  border-radius: 4px 4px 4px 4px;
+  height: 40px;
+  font-weight: 600;
+  font-family: Rubik;
+  margin-left: 15px;
+  font-size: 14px;
+  padding: 0px 24px 0px 24px;
+}
+
+.cancel-button:hover {
+  background-color: #ececec;
+  border: 1px solid #ececec !important;
+}
+
+.read-view {
+  line-height: 40px;
+  padding-right: 54px;
+  text-align: right;
+  font-weight: 700;
+  font-family: Inter;
+}
+
+.attribute-title {
+  line-height: 40px;
+  margin-left: 16px;
+  font-weight: 700;
+  font-family: Inter;
+}
+
+.role-attr-container {
+  box-shadow: 0 0 2px #ccc;
+  height: 40px;
+  display: flex;
+  line-height: 64px;
+  justify-content: space-between;
+  border-bottom: 1px solid #dedede;
+  background-color: white;
+}
+
+.role-table-container {
+  box-shadow: 0 0 2px #ccc;
+  min-height: auto;
+  margin-top: 20px;
+  margin-left: 24px;
+  margin-bottom: 16px;
+  border-right: 1px solid #dedede !important;
+}
+
+.ant-table-filter-dropdown {
+  border-radius: 0px !important;
+}
+
+.search-container {
+  padding: 2px;
+  float: left;
+  width: 140px;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #313131;
+  /* border: 1px soild hsl(0, 0%, 71%) !important; */
+}
+
+.text-def-btn {
+  font-family: "Rubik";
+  color: #313131;
+  font-size: 12px;
+  padding-top: 11px;
+  margin-bottom: 11px;
+}
+
+.search-popup-input {
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  margin-bottom: 8px;
+  display: block;
+  width: 132px;
+  font-family: "Inter";
+}
